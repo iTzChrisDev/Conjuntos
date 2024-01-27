@@ -2,7 +2,7 @@ package Funciones;
 
 import java.util.ArrayList;
 
-public class ListasManager {
+public class ListManager {
     public ArrayList<String> getConjunto(String cadena) {
         String[] aux = cadena.split(",");
         ArrayList<String> lista = new ArrayList<>();

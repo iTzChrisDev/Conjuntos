@@ -1,6 +1,6 @@
 package com.mycompany.conjuntos;
 
-import Funciones.ListasManager;
+import Funciones.ListManager;
 
 public class Conjuntos {
 
@@ -10,7 +10,7 @@ public class Conjuntos {
         String c = "a,b,g,,sd,s,f,a,s";
         String d = "a, ,o we, g d,po ,c,f,vs, ,qwerty";
                 
-        ListasManager obS = new ListasManager();
+        ListManager obS = new ListManager();
         for (String s : obS.getConjunto(d)) 
         {
             System.out.print(s + "_");
