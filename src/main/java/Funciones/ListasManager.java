@@ -1,14 +1,8 @@
-package functions;
+package Funciones;
 
 import java.util.ArrayList;
 
-public class SetsManager {
-
-    /**
-     * JavaDoc de prueba
-     * @param cadena se refiere al texto que sera separado en un conjunto
-     * @return Devuelve el conjunto en un Arraylist de tipo String
-     */
+public class ListasManager {
     public ArrayList<String> getConjunto(String cadena) {
         String[] aux = cadena.split(",");
         ArrayList<String> lista = new ArrayList<>();
