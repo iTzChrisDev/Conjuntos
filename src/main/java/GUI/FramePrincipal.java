@@ -1,24 +1,37 @@
 package GUI;
 
 import CustomComponents.ScrollBarCustom;
+import Funciones.Data;
+import Funciones.ListManager;
 import java.awt.Color;
+import javax.swing.DefaultListModel;
 
 public class FramePrincipal extends javax.swing.JFrame {
+
+    private DefaultListModel modelA, modelB, modelC, modelD;
+    private Data data;
+    private ListManager manager;
 
     public FramePrincipal() {
         initComponents();
         initComponentsCustom();
         setLocationRelativeTo(this);
+
+        modelA = new DefaultListModel();
+        modelB = new DefaultListModel();
+        modelC = new DefaultListModel();
+        modelD = new DefaultListModel();
+        data = new Data();
+        manager = new ListManager();
     }
 
-    public void initComponentsCustom()
-    {
+    public void initComponentsCustom() {
         scrollA.setVerticalScrollBar(new ScrollBarCustom(new Color(102, 99, 254), new Color(68, 66, 169)));
-        scrollB.setVerticalScrollBar(new ScrollBarCustom(new Color(0,160,150), new Color(0, 106, 121)));
+        scrollB.setVerticalScrollBar(new ScrollBarCustom(new Color(0, 160, 150), new Color(0, 106, 121)));
         scrollC.setVerticalScrollBar(new ScrollBarCustom(new Color(224, 108, 159), new Color(149, 72, 106)));
         scrollD.setVerticalScrollBar(new ScrollBarCustom(new Color(38, 111, 213), new Color(25, 74, 142)));
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -192,6 +205,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         btnSeparar.setFocusable(false);
         btnSeparar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnSeparar.setRadius(20);
+        btnSeparar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSepararActionPerformed(evt);
+            }
+        });
         btnContainer.add(btnSeparar);
 
         mainContainer.add(btnContainer, java.awt.BorderLayout.SOUTH);
@@ -263,14 +281,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         listaA.setBorder(null);
         listaA.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaA.setForeground(new java.awt.Color(255, 255, 255));
-        listaA.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listaA.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaA.setFocusable(false);
-        listaA.setSelectionBackground(new java.awt.Color(102, 99, 254));
+        listaA.setSelectionBackground(new java.awt.Color(102, 113, 255));
         listaA.setSelectionForeground(new java.awt.Color(255, 255, 255));
         scrollA.setViewportView(listaA);
 
@@ -323,14 +336,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         listaB.setBorder(null);
         listaB.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaB.setForeground(new java.awt.Color(255, 255, 255));
-        listaB.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listaB.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaB.setFocusable(false);
-        listaB.setSelectionBackground(new java.awt.Color(0, 160, 150));
+        listaB.setSelectionBackground(new java.awt.Color(0, 160, 166));
         listaB.setSelectionForeground(new java.awt.Color(255, 255, 255));
         scrollB.setViewportView(listaB);
 
@@ -383,14 +391,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         listaC.setBorder(null);
         listaC.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaC.setForeground(new java.awt.Color(255, 255, 255));
-        listaC.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listaC.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaC.setFocusable(false);
-        listaC.setSelectionBackground(new java.awt.Color(224, 108, 159));
+        listaC.setSelectionBackground(new java.awt.Color(181, 108, 163));
         listaC.setSelectionForeground(new java.awt.Color(255, 255, 255));
         scrollC.setViewportView(listaC);
 
@@ -443,14 +446,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         listaD.setBorder(null);
         listaD.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaD.setForeground(new java.awt.Color(255, 255, 255));
-        listaD.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listaD.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaD.setFocusable(false);
-        listaD.setSelectionBackground(new java.awt.Color(38, 111, 213));
+        listaD.setSelectionBackground(new java.awt.Color(38, 120, 204));
         listaD.setSelectionForeground(new java.awt.Color(255, 255, 255));
         scrollD.setViewportView(listaD);
 
@@ -475,7 +473,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlBg, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -484,6 +482,14 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSepararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSepararActionPerformed
+        data.clearData();
+        manager.llenarLista(listaA, txtA, data.getA());
+        manager.llenarLista(listaB, txtB, data.getB());
+        manager.llenarLista(listaC, txtC, data.getC());
+        manager.llenarLista(listaD, txtD, data.getD());
+    }//GEN-LAST:event_btnSepararActionPerformed
 
     /**
      * @param args the command line arguments
