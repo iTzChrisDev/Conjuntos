@@ -1,7 +1,9 @@
 CustomComponents\PanelRound.class
 CustomComponents\Button$1.class
 CustomComponents\ModernScrollBarUI.class
+GUI\FramePrincipal$3.class
 GUI\FramePrincipal.class
+GUI\FramePrincipal$2.class
 CustomComponents\ModernScrollBarUI$ScrollBarButton.class
 Funciones\ListManager.class
 com\mycompany\conjuntos\Conjuntos.class
@@ -11,3 +13,5 @@ Data\Listas.class
 GUI\FramePrincipal$1.class
 CustomComponents\Button.class
 CustomComponents\TextPrompt$Show.class
+GUI\FramePrincipal$5.class
+GUI\FramePrincipal$4.class
