@@ -37,19 +37,30 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlBg = new javax.swing.JPanel();
+        pnlOperaciones = new CustomComponents.PanelRound();
+        panelRound1 = new CustomComponents.PanelRound();
+        pnlCheckBox = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
         pnlHeader = new javax.swing.JPanel();
         pnlInputs = new CustomComponents.PanelRound();
-        mainContainer = new javax.swing.JPanel();
         txtContainer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtA = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        txtB = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         txtC = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        txtB = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         txtD = new javax.swing.JTextField();
@@ -93,14 +104,76 @@ public class FramePrincipal extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 500));
 
         pnlBg.setBackground(new java.awt.Color(30, 30, 30));
         pnlBg.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        pnlBg.setLayout(new java.awt.BorderLayout(0, 10));
+        pnlBg.setLayout(new java.awt.BorderLayout(10, 5));
+
+        pnlOperaciones.setBackground(new java.awt.Color(30, 30, 30));
+        pnlOperaciones.setRoundBottomLeft(15);
+        pnlOperaciones.setRoundBottomRight(15);
+        pnlOperaciones.setRoundTopLeft(15);
+        pnlOperaciones.setRoundTopRight(15);
+        pnlOperaciones.setLayout(new java.awt.BorderLayout());
+
+        panelRound1.setBackground(new java.awt.Color(50, 50, 50));
+        panelRound1.setRoundBottomLeft(15);
+        panelRound1.setRoundBottomRight(15);
+        panelRound1.setRoundTopLeft(15);
+        panelRound1.setRoundTopRight(15);
+        panelRound1.setLayout(new java.awt.BorderLayout());
+
+        pnlCheckBox.setOpaque(false);
+        pnlCheckBox.setLayout(new java.awt.BorderLayout());
+
+        jPanel18.setOpaque(false);
+
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Selecciona dos conjuntos");
+        jPanel18.add(jLabel13);
+
+        pnlCheckBox.add(jPanel18, java.awt.BorderLayout.NORTH);
+
+        jPanel19.setOpaque(false);
+        jPanel19.setLayout(new java.awt.GridLayout(1, 4));
+
+        jCheckBox1.setText("A");
+        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel19.add(jCheckBox1);
+
+        jCheckBox2.setText("B");
+        jCheckBox2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel19.add(jCheckBox2);
+
+        jCheckBox3.setText("C");
+        jCheckBox3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel19.add(jCheckBox3);
+
+        jCheckBox4.setText("D");
+        jCheckBox4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel19.add(jCheckBox4);
+
+        pnlCheckBox.add(jPanel19, java.awt.BorderLayout.CENTER);
+
+        panelRound1.add(pnlCheckBox, java.awt.BorderLayout.NORTH);
+
+        pnlOperaciones.add(panelRound1, java.awt.BorderLayout.CENTER);
+
+        jLabel12.setFont(new java.awt.Font("Bahnschrift", 1, 22)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Operaciones");
+        pnlOperaciones.add(jLabel12, java.awt.BorderLayout.NORTH);
+
+        pnlBg.add(pnlOperaciones, java.awt.BorderLayout.EAST);
+
+        jPanel17.setOpaque(false);
+        jPanel17.setLayout(new java.awt.BorderLayout());
 
         pnlHeader.setOpaque(false);
-        pnlHeader.setLayout(new java.awt.BorderLayout());
+        pnlHeader.setLayout(new java.awt.BorderLayout(10, 0));
 
         pnlInputs.setBackground(new java.awt.Color(50, 50, 50));
         pnlInputs.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
@@ -110,17 +183,14 @@ public class FramePrincipal extends javax.swing.JFrame {
         pnlInputs.setRoundTopRight(15);
         pnlInputs.setLayout(new java.awt.BorderLayout());
 
-        mainContainer.setOpaque(false);
-        mainContainer.setLayout(new java.awt.BorderLayout(0, 5));
-
         txtContainer.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 1, 5));
         txtContainer.setOpaque(false);
-        txtContainer.setLayout(new java.awt.GridLayout(1, 4, 10, 10));
+        txtContainer.setLayout(new java.awt.GridLayout(4, 1, 10, 10));
 
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.BorderLayout(5, 0));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 153, 102));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("A");
@@ -135,28 +205,10 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         txtContainer.add(jPanel1);
 
-        jPanel2.setOpaque(false);
-        jPanel2.setLayout(new java.awt.BorderLayout(5, 0));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 153, 102));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("B");
-        jPanel2.add(jLabel3, java.awt.BorderLayout.WEST);
-
-        txtB.setBackground(new java.awt.Color(50, 50, 50));
-        txtB.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        txtB.setForeground(new java.awt.Color(230, 230, 230));
-        txtB.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 102), 2, true));
-        txtB.setCaretColor(new java.awt.Color(230, 230, 230));
-        jPanel2.add(txtB, java.awt.BorderLayout.CENTER);
-
-        txtContainer.add(jPanel2);
-
         jPanel3.setOpaque(false);
         jPanel3.setLayout(new java.awt.BorderLayout(5, 0));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 153, 102));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("C");
@@ -171,10 +223,28 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         txtContainer.add(jPanel3);
 
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new java.awt.BorderLayout(5, 0));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 153, 102));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("B");
+        jPanel2.add(jLabel3, java.awt.BorderLayout.WEST);
+
+        txtB.setBackground(new java.awt.Color(50, 50, 50));
+        txtB.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        txtB.setForeground(new java.awt.Color(230, 230, 230));
+        txtB.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 102), 2, true));
+        txtB.setCaretColor(new java.awt.Color(230, 230, 230));
+        jPanel2.add(txtB, java.awt.BorderLayout.CENTER);
+
+        txtContainer.add(jPanel2);
+
         jPanel4.setOpaque(false);
         jPanel4.setLayout(new java.awt.BorderLayout(5, 0));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 153, 102));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("D");
@@ -189,11 +259,11 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         txtContainer.add(jPanel4);
 
-        mainContainer.add(txtContainer, java.awt.BorderLayout.CENTER);
+        pnlInputs.add(txtContainer, java.awt.BorderLayout.CENTER);
 
         btnContainer.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 20, 5, 20));
         btnContainer.setOpaque(false);
-        btnContainer.setLayout(new java.awt.GridLayout());
+        btnContainer.setLayout(new java.awt.GridLayout(1, 0));
 
         btnSeparar.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 10, 5, 10));
         btnSeparar.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,22 +282,19 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         btnContainer.add(btnSeparar);
 
-        mainContainer.add(btnContainer, java.awt.BorderLayout.SOUTH);
-
-        pnlInputs.add(mainContainer, java.awt.BorderLayout.CENTER);
+        pnlInputs.add(btnContainer, java.awt.BorderLayout.SOUTH);
 
         pnlHeader.add(pnlInputs, java.awt.BorderLayout.CENTER);
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(230, 230, 230));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Elementos");
-        jLabel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 5, 0));
+        jLabel1.setText("Operaciones");
+        jLabel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         pnlHeader.add(jLabel1, java.awt.BorderLayout.NORTH);
 
-        pnlBg.add(pnlHeader, java.awt.BorderLayout.NORTH);
+        jPanel17.add(pnlHeader, java.awt.BorderLayout.NORTH);
 
-        pnlMain.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
         pnlMain.setOpaque(false);
         pnlMain.setLayout(new java.awt.BorderLayout());
 
@@ -236,7 +303,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         pnlConjuntos.setRoundBottomRight(15);
         pnlConjuntos.setRoundTopLeft(15);
         pnlConjuntos.setRoundTopRight(15);
-        pnlConjuntos.setLayout(new java.awt.GridLayout(1, 4, 10, 0));
+        pnlConjuntos.setLayout(new java.awt.GridLayout(2, 2, 10, 10));
 
         pnlConjunto1.setBackground(new java.awt.Color(102, 99, 254));
         pnlConjunto1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -250,7 +317,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel5.setLayout(new java.awt.BorderLayout());
 
         jPanel13.setOpaque(false);
-        jPanel13.setLayout(new java.awt.GridLayout());
+        jPanel13.setLayout(new java.awt.GridLayout(1, 0));
         jPanel5.add(jPanel13, java.awt.BorderLayout.CENTER);
 
         panelRound5.setBackground(new java.awt.Color(255, 255, 255));
@@ -260,7 +327,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         panelRound5.setRoundBottomRight(50);
         panelRound5.setRoundTopLeft(50);
         panelRound5.setRoundTopRight(50);
-        panelRound5.setLayout(new java.awt.GridLayout());
+        panelRound5.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 99, 254));
@@ -273,11 +340,11 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jPanel9.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
         jPanel9.setOpaque(false);
-        jPanel9.setLayout(new java.awt.GridLayout());
+        jPanel9.setLayout(new java.awt.GridLayout(1, 0));
 
         scrollA.setBorder(null);
 
-        listaA.setBackground(new java.awt.Color(102, 99, 254));
+        listaA.setBackground(new java.awt.Color(102, 113, 255));
         listaA.setBorder(null);
         listaA.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaA.setForeground(new java.awt.Color(255, 255, 255));
@@ -305,7 +372,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel6.setLayout(new java.awt.BorderLayout());
 
         jPanel14.setOpaque(false);
-        jPanel14.setLayout(new java.awt.GridLayout());
+        jPanel14.setLayout(new java.awt.GridLayout(1, 0));
         jPanel6.add(jPanel14, java.awt.BorderLayout.CENTER);
 
         panelRound6.setBackground(new java.awt.Color(255, 255, 255));
@@ -315,7 +382,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         panelRound6.setRoundBottomRight(50);
         panelRound6.setRoundTopLeft(50);
         panelRound6.setRoundTopRight(50);
-        panelRound6.setLayout(new java.awt.GridLayout());
+        panelRound6.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 160, 150));
@@ -328,11 +395,11 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jPanel10.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
         jPanel10.setOpaque(false);
-        jPanel10.setLayout(new java.awt.GridLayout());
+        jPanel10.setLayout(new java.awt.GridLayout(1, 0));
 
         scrollB.setBorder(null);
 
-        listaB.setBackground(new java.awt.Color(0, 160, 150));
+        listaB.setBackground(new java.awt.Color(0, 160, 166));
         listaB.setBorder(null);
         listaB.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaB.setForeground(new java.awt.Color(255, 255, 255));
@@ -360,7 +427,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel7.setLayout(new java.awt.BorderLayout());
 
         jPanel15.setOpaque(false);
-        jPanel15.setLayout(new java.awt.GridLayout());
+        jPanel15.setLayout(new java.awt.GridLayout(1, 0));
         jPanel7.add(jPanel15, java.awt.BorderLayout.CENTER);
 
         panelRound7.setBackground(new java.awt.Color(255, 255, 255));
@@ -370,7 +437,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         panelRound7.setRoundBottomRight(50);
         panelRound7.setRoundTopLeft(50);
         panelRound7.setRoundTopRight(50);
-        panelRound7.setLayout(new java.awt.GridLayout());
+        panelRound7.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(224, 108, 159));
@@ -383,11 +450,11 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jPanel11.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
         jPanel11.setOpaque(false);
-        jPanel11.setLayout(new java.awt.GridLayout());
+        jPanel11.setLayout(new java.awt.GridLayout(1, 0));
 
         scrollC.setBorder(null);
 
-        listaC.setBackground(new java.awt.Color(224, 108, 159));
+        listaC.setBackground(new java.awt.Color(181, 108, 163));
         listaC.setBorder(null);
         listaC.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaC.setForeground(new java.awt.Color(255, 255, 255));
@@ -415,7 +482,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel8.setLayout(new java.awt.BorderLayout());
 
         jPanel16.setOpaque(false);
-        jPanel16.setLayout(new java.awt.GridLayout());
+        jPanel16.setLayout(new java.awt.GridLayout(1, 0));
         jPanel8.add(jPanel16, java.awt.BorderLayout.CENTER);
 
         panelRound8.setBackground(new java.awt.Color(255, 255, 255));
@@ -425,7 +492,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         panelRound8.setRoundBottomRight(50);
         panelRound8.setRoundTopLeft(50);
         panelRound8.setRoundTopRight(50);
-        panelRound8.setLayout(new java.awt.GridLayout());
+        panelRound8.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(38, 111, 213));
@@ -438,11 +505,11 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jPanel12.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
         jPanel12.setOpaque(false);
-        jPanel12.setLayout(new java.awt.GridLayout());
+        jPanel12.setLayout(new java.awt.GridLayout(1, 0));
 
         scrollD.setBorder(null);
 
-        listaD.setBackground(new java.awt.Color(38, 111, 213));
+        listaD.setBackground(new java.awt.Color(38, 120, 204));
         listaD.setBorder(null);
         listaD.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaD.setForeground(new java.awt.Color(255, 255, 255));
@@ -464,20 +531,22 @@ public class FramePrincipal extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(230, 230, 230));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Conjuntos");
-        jLabel10.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 5, 0));
+        jLabel10.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 5, 0));
         pnlMain.add(jLabel10, java.awt.BorderLayout.NORTH);
 
-        pnlBg.add(pnlMain, java.awt.BorderLayout.CENTER);
+        jPanel17.add(pnlMain, java.awt.BorderLayout.CENTER);
+
+        pnlBg.add(jPanel17, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBg, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(pnlBg, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBg, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(pnlBg, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         pack();
@@ -529,8 +598,14 @@ public class FramePrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnContainer;
     private CustomComponents.Button btnSeparar;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -547,6 +622,9 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -559,12 +637,13 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JList<String> listaB;
     private javax.swing.JList<String> listaC;
     private javax.swing.JList<String> listaD;
-    private javax.swing.JPanel mainContainer;
+    private CustomComponents.PanelRound panelRound1;
     private CustomComponents.PanelRound panelRound5;
     private CustomComponents.PanelRound panelRound6;
     private CustomComponents.PanelRound panelRound7;
     private CustomComponents.PanelRound panelRound8;
     private javax.swing.JPanel pnlBg;
+    private javax.swing.JPanel pnlCheckBox;
     private CustomComponents.PanelRound pnlConjunto1;
     private CustomComponents.PanelRound pnlConjunto2;
     private CustomComponents.PanelRound pnlConjunto3;
@@ -573,6 +652,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlHeader;
     private CustomComponents.PanelRound pnlInputs;
     private javax.swing.JPanel pnlMain;
+    private CustomComponents.PanelRound pnlOperaciones;
     private javax.swing.JScrollPane scrollA;
     private javax.swing.JScrollPane scrollB;
     private javax.swing.JScrollPane scrollC;
