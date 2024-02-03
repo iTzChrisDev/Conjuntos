@@ -1,6 +1,7 @@
 CustomComponents\PanelRound.class
 CustomComponents\Button$1.class
 CustomComponents\ModernScrollBarUI.class
+CustomComponents\CheckBox.class
 GUI\FramePrincipal.class
 GUI\FramePrincipal$2.class
 CustomComponents\ModernScrollBarUI$ScrollBarButton.class

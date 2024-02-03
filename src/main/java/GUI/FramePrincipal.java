@@ -43,10 +43,10 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel18 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        checkBox1 = new CustomComponents.CheckBox();
+        checkBox2 = new CustomComponents.CheckBox();
+        checkBox3 = new CustomComponents.CheckBox();
+        checkBox4 = new CustomComponents.CheckBox();
         jLabel12 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         pnlHeader = new javax.swing.JPanel();
@@ -139,21 +139,29 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel19.setOpaque(false);
         jPanel19.setLayout(new java.awt.GridLayout(1, 4));
 
-        jCheckBox1.setText("A");
-        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel19.add(jCheckBox1);
+        checkBox1.setBackground(new java.awt.Color(102, 99, 254));
+        checkBox1.setForeground(new java.awt.Color(255, 255, 255));
+        checkBox1.setText("A");
+        checkBox1.setFocusable(false);
+        jPanel19.add(checkBox1);
 
-        jCheckBox2.setText("B");
-        jCheckBox2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel19.add(jCheckBox2);
+        checkBox2.setBackground(new java.awt.Color(0, 160, 150));
+        checkBox2.setForeground(new java.awt.Color(255, 255, 255));
+        checkBox2.setText("B");
+        checkBox2.setFocusable(false);
+        jPanel19.add(checkBox2);
 
-        jCheckBox3.setText("C");
-        jCheckBox3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel19.add(jCheckBox3);
+        checkBox3.setBackground(new java.awt.Color(224, 108, 159));
+        checkBox3.setForeground(new java.awt.Color(255, 255, 255));
+        checkBox3.setText("C");
+        checkBox3.setFocusable(false);
+        jPanel19.add(checkBox3);
 
-        jCheckBox4.setText("D");
-        jCheckBox4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel19.add(jCheckBox4);
+        checkBox4.setBackground(new java.awt.Color(38, 111, 213));
+        checkBox4.setForeground(new java.awt.Color(255, 255, 255));
+        checkBox4.setText("D");
+        checkBox4.setFocusable(false);
+        jPanel19.add(checkBox4);
 
         pnlCheckBox.add(jPanel19, java.awt.BorderLayout.CENTER);
 
@@ -399,7 +407,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         scrollB.setBorder(null);
 
-        listaB.setBackground(new java.awt.Color(0, 160, 166));
+        listaB.setBackground(new java.awt.Color(0, 180, 176));
         listaB.setBorder(null);
         listaB.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaB.setForeground(new java.awt.Color(255, 255, 255));
@@ -454,7 +462,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         scrollC.setBorder(null);
 
-        listaC.setBackground(new java.awt.Color(181, 108, 163));
+        listaC.setBackground(new java.awt.Color(180, 126, 162));
         listaC.setBorder(null);
         listaC.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         listaC.setForeground(new java.awt.Color(255, 255, 255));
@@ -554,10 +562,10 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void btnSepararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSepararActionPerformed
         data.clearData();
-        manager.llenarLista(listaA, txtA, data.getA());
-        manager.llenarLista(listaB, txtB, data.getB());
-        manager.llenarLista(listaC, txtC, data.getC());
-        manager.llenarLista(listaD, txtD, data.getD());
+        manager.setList(listaA, txtA, data.getA());
+        manager.setList(listaB, txtB, data.getB());
+        manager.setList(listaC, txtC, data.getC());
+        manager.setList(listaD, txtD, data.getD());
     }//GEN-LAST:event_btnSepararActionPerformed
 
     /**
@@ -598,10 +606,10 @@ public class FramePrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnContainer;
     private CustomComponents.Button btnSeparar;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
+    private CustomComponents.CheckBox checkBox1;
+    private CustomComponents.CheckBox checkBox2;
+    private CustomComponents.CheckBox checkBox3;
+    private CustomComponents.CheckBox checkBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
