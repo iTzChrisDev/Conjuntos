@@ -7,10 +7,10 @@ import javax.swing.JTextField;
 
 public class ListManager {
 
-    private SetOperations obS;
+    private ConjuntosOperations obS;
 
     public ListManager() {
-        obS = new SetOperations();
+        obS = new ConjuntosOperations();
     }
 
     public void setList(JList lista, JTextField txt, ArrayList<String> conjunto) {

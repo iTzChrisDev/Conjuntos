@@ -4,11 +4,9 @@ import CustomComponents.ScrollBarCustom;
 import Funciones.Data;
 import Funciones.ListManager;
 import java.awt.Color;
-import javax.swing.DefaultListModel;
 
 public class MainFrame extends javax.swing.JFrame {
 
-    private DefaultListModel modelA, modelB, modelC, modelD;
     private Data data;
     private ListManager manager;
 
@@ -16,11 +14,7 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         initComponentsCustom();
         setLocationRelativeTo(this);
-
-        modelA = new DefaultListModel();
-        modelB = new DefaultListModel();
-        modelC = new DefaultListModel();
-        modelD = new DefaultListModel();
+        
         data = new Data();
         manager = new ListManager();
     }
@@ -358,7 +352,7 @@ public class MainFrame extends javax.swing.JFrame {
         listaA.setForeground(new java.awt.Color(255, 255, 255));
         listaA.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaA.setFocusable(false);
-        listaA.setSelectionBackground(new java.awt.Color(102, 113, 255));
+        listaA.setSelectionBackground(new java.awt.Color(102, 99, 254));
         listaA.setSelectionForeground(new java.awt.Color(255, 255, 255));
         scrollA.setViewportView(listaA);
 
@@ -413,7 +407,7 @@ public class MainFrame extends javax.swing.JFrame {
         listaB.setForeground(new java.awt.Color(255, 255, 255));
         listaB.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaB.setFocusable(false);
-        listaB.setSelectionBackground(new java.awt.Color(0, 160, 166));
+        listaB.setSelectionBackground(new java.awt.Color(0, 160, 150));
         listaB.setSelectionForeground(new java.awt.Color(255, 255, 255));
         scrollB.setViewportView(listaB);
 
@@ -468,7 +462,7 @@ public class MainFrame extends javax.swing.JFrame {
         listaC.setForeground(new java.awt.Color(255, 255, 255));
         listaC.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaC.setFocusable(false);
-        listaC.setSelectionBackground(new java.awt.Color(181, 108, 163));
+        listaC.setSelectionBackground(new java.awt.Color(224, 108, 159));
         listaC.setSelectionForeground(new java.awt.Color(255, 255, 255));
         scrollC.setViewportView(listaC);
 
@@ -523,7 +517,7 @@ public class MainFrame extends javax.swing.JFrame {
         listaD.setForeground(new java.awt.Color(255, 255, 255));
         listaD.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaD.setFocusable(false);
-        listaD.setSelectionBackground(new java.awt.Color(38, 120, 204));
+        listaD.setSelectionBackground(new java.awt.Color(38, 111, 213));
         listaD.setSelectionForeground(new java.awt.Color(255, 255, 255));
         scrollD.setViewportView(listaD);
 

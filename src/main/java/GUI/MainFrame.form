@@ -766,7 +766,7 @@
                                     <Property name="selectionMode" type="int" value="0"/>
                                     <Property name="focusable" type="boolean" value="false"/>
                                     <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="ff" green="71" red="66" type="rgb"/>
+                                      <Color blue="fe" green="63" red="66" type="rgb"/>
                                     </Property>
                                     <Property name="selectionForeground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -923,7 +923,7 @@
                                     <Property name="selectionMode" type="int" value="0"/>
                                     <Property name="focusable" type="boolean" value="false"/>
                                     <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="a6" green="a0" red="0" type="rgb"/>
+                                      <Color blue="96" green="a0" red="0" type="rgb"/>
                                     </Property>
                                     <Property name="selectionForeground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1080,7 +1080,7 @@
                                     <Property name="selectionMode" type="int" value="0"/>
                                     <Property name="focusable" type="boolean" value="false"/>
                                     <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="a3" green="6c" red="b5" type="rgb"/>
+                                      <Color blue="9f" green="6c" red="e0" type="rgb"/>
                                     </Property>
                                     <Property name="selectionForeground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1237,7 +1237,7 @@
                                     <Property name="selectionMode" type="int" value="0"/>
                                     <Property name="focusable" type="boolean" value="false"/>
                                     <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="cc" green="78" red="26" type="rgb"/>
+                                      <Color blue="d5" green="6f" red="26" type="rgb"/>
                                     </Property>
                                     <Property name="selectionForeground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="ff" green="ff" red="ff" type="rgb"/>

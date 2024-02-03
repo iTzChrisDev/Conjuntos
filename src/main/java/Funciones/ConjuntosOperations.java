@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SetOperations {
+public class ConjuntosOperations {
 
     public ArrayList<String> getConjunto(String cadena) {
         ArrayList<String> lista = new ArrayList<>();
