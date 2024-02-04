@@ -6,7 +6,7 @@ public class StringOperations {
         return str + auxStr;
     }
 
-    public String getPotenciaAlf(int index, String str) {
+    public String getPotencia(int index, String str) {
         String aux = "";
         for (int i = 0; i < index; i++) {
             aux += str;

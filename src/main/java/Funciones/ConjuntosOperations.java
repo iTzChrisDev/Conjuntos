@@ -114,18 +114,22 @@ public class ConjuntosOperations {
         return product;
     }
 
-    public void getPotenciaConjunto(int indice, ArrayList<String> conjunto, ArrayList<String> elementosActuales, ArrayList<ArrayList<String>> resultado) {
-//        resultado.add(elementosActuales);
-//
-//        for (int i = indice; i < conjunto.size(); i++) {
-//            // Agregar el elemento actual a la combinación
-//            elementosActuales.add(conjunto.get(i));
-//
-//            // Llamar recursivamente para el siguiente elemento
-//            getPotenciaConjunto(i + 1, conjunto, elementosActuales, resultado);
-//
-//            // Eliminar el elemento actual para realizar otras combinaciones
-//            elementosActuales.remove(elementosActuales.size() - 1);
-//        }
+    public ArrayList<ArrayList<String>> getConjuntoPotencia(ArrayList<String> conjunto) {
+        int n = conjunto.size();
+        int totalSubconjuntos = 1 << n;  // 2^n
+
+        ArrayList<ArrayList<String>> conjuntoPotencia = new ArrayList<>();
+
+        for (int i = 0; i < totalSubconjuntos; i++) {
+            ArrayList<String> subset = new ArrayList<>();
+            for (int j = 0; j < n; j++) {
+                if ((i & (1 << j)) != 0) {
+                    subset.add(conjunto.get(j));
+                }
+            }
+            conjuntoPotencia.add(subset);
+        }
+
+        return conjuntoPotencia;
     }
 }
