@@ -32,6 +32,7 @@ public class ConjuntosOperations {
         return lista;
     }
 
+    // Operaciones con conjuntos
     public ArrayList<String> getUniverse(ArrayList<String> a, ArrayList<String> b) {
         Set<String> set = new HashSet<>();
         set.addAll(a);
@@ -103,11 +104,13 @@ public class ConjuntosOperations {
         return set.size();
     }
 
-    public ArrayList<String[]> getCartesianProduct(ArrayList<String> firstSet, ArrayList<String> secondSet) {
-        ArrayList<String[]> product = new ArrayList<>();
+    public ArrayList<ArrayList<String>> getCartesianProduct(ArrayList<String> firstSet, ArrayList<String> secondSet) {
+        ArrayList<ArrayList<String>> product = new ArrayList<>();
         for (String f : firstSet) {
             for (String s : secondSet) {
-                String aux[] = {f, s};
+                ArrayList<String> aux = new ArrayList<>();
+                aux.add(f);
+                aux.add(s);
                 product.add(aux);
             }
         }

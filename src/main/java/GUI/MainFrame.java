@@ -1,50 +1,177 @@
 package GUI;
 
+import CustomComponents.CheckBox;
 import CustomComponents.ScrollBarCustom;
+import Funciones.ConjuntosOperations;
 import Funciones.Data;
 import Funciones.ListManager;
+import Funciones.StringOperations;
 import java.awt.Color;
+import java.awt.Scrollbar;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.SwingUtilities;
 
 public class MainFrame extends javax.swing.JFrame {
 
     private Data data;
     private ListManager manager;
+    private ConjuntosOperations obCon;
+    private StringOperations obCad;
+    private int cont;
+    private ArrayList<String> conjuntos, first, second;
 
     public MainFrame() {
         initComponents();
         initComponentsCustom();
         setLocationRelativeTo(this);
 
+        cont = 0;
+        conjuntos = new ArrayList<>();
+        first = new ArrayList<>();
+        second = new ArrayList<>();
+
         data = new Data();
         manager = new ListManager();
+        obCad = new StringOperations();
+        obCon = new ConjuntosOperations();
     }
 
     public void initComponentsCustom() {
+        ScrollBarCustom scrollHorA = new ScrollBarCustom(new Color(102, 99, 254), new Color(68, 66, 169));
+        scrollHorA.setOrientation(Scrollbar.HORIZONTAL);
+        ScrollBarCustom scrollHorB = new ScrollBarCustom(new Color(0, 160, 150), new Color(0, 106, 121));
+        scrollHorB.setOrientation(Scrollbar.HORIZONTAL);
+        ScrollBarCustom scrollHorC = new ScrollBarCustom(new Color(224, 108, 159), new Color(149, 72, 106));
+        scrollHorC.setOrientation(Scrollbar.HORIZONTAL);
+        ScrollBarCustom scrollHorD = new ScrollBarCustom(new Color(38, 111, 213), new Color(25, 74, 142));
+        scrollHorD.setOrientation(Scrollbar.HORIZONTAL);
+
         scrollA.setVerticalScrollBar(new ScrollBarCustom(new Color(102, 99, 254), new Color(68, 66, 169)));
         scrollB.setVerticalScrollBar(new ScrollBarCustom(new Color(0, 160, 150), new Color(0, 106, 121)));
         scrollC.setVerticalScrollBar(new ScrollBarCustom(new Color(224, 108, 159), new Color(149, 72, 106)));
         scrollD.setVerticalScrollBar(new ScrollBarCustom(new Color(38, 111, 213), new Color(25, 74, 142)));
+        scrollA.setHorizontalScrollBar(scrollHorA);
+        scrollB.setHorizontalScrollBar(scrollHorB);
+        scrollC.setHorizontalScrollBar(scrollHorC);
+        scrollD.setHorizontalScrollBar(scrollHorD);
+
         scrollConjuntos.getViewport().setBackground(new Color(50, 50, 50));
+        ScrollBarCustom scroll = new ScrollBarCustom(new Color(50, 50, 50), new Color(255, 153, 102));
+        scroll.setOrientation(Scrollbar.HORIZONTAL);
+        scrollConjuntos.setHorizontalScrollBar(scroll);
         scrollConjuntos.setVerticalScrollBar(new ScrollBarCustom(new Color(50, 50, 50), new Color(255, 153, 102)));
 
-        pnlUniverso.setData("", Color.orange, "Universo", "1,2,3,4,5,2,3");
-        pnlUnion.setData("", Color.orange, "Union", "1,2,3,4,5,2,3");
-        pnlIntersect.setData("", Color.orange, "Intersección", "1,2,3,4,5,2,3");
-        pnlDifference.setData("", Color.orange, "Diferencia", "1,2,3,4,5,2,3");
-        pnlSymetricDiff.setData("", Color.orange, "Diferencia Simetrica", "1,2,3,4,5,2,3");
-        pnlComp1.setData("", Color.orange, "Complemento 1", "1,2,3,4,5,2,3");
-        pnlComp2.setData("", Color.orange, "Complemento 2", "1,2,3,4,5,2,3");
-        pnlCard1.setData("", Color.orange, "Cardinalidad 1", "1,2,3,4,5,2,3");
-        pnlCard2.setData("", Color.orange, "Cardinalidad 2", "1,2,3,4,5,2,3");
-        pnlCartesian.setData("", Color.orange, "Producto Cartesiano", "1,2,3,4,5,2,3");
-        pnlPot1.setData("", Color.orange, "Potencia 1", "1,2,3,4,5,2,3");
-        pnlPot2.setData("", Color.orange, "Potencia 2", "1,2,3,4,5,2,3");
+        scrollCadenas.getViewport().setBackground(new Color(50, 50, 50));
+        ScrollBarCustom scroll1 = new ScrollBarCustom(new Color(50, 50, 50), new Color(255, 153, 102));
+        scroll1.setOrientation(Scrollbar.HORIZONTAL);
+        scrollCadenas.setHorizontalScrollBar(scroll1);
+        scrollCadenas.setVerticalScrollBar(new ScrollBarCustom(new Color(50, 50, 50), new Color(255, 153, 102)));
+
+        btnCalcCon.setIcon(new ImageIcon("./src/main/java/Resources/calcular.png"));
+        btnCalcCad.setIcon(new ImageIcon("./src/main/java/Resources/calcular.png"));
+        btnGenerar.setIcon(new ImageIcon("./src/main/java/Resources/generar.png"));
+
+        checkCadA.setActionCommand("A");
+        checkCadB.setActionCommand("B");
+        checkCadC.setActionCommand("C");
+        checkCadD.setActionCommand("D");
+    }
+
+    public void genOpConjuntos() {
+        first.clear();
+        second.clear();
+        String strFirst = "", strSec = "";
+        for (String s : conjuntos) {
+            switch (s) {
+                case "A":
+                    if (first.isEmpty()) {
+                        first.addAll(data.getA());
+                        strFirst = "A";
+                    } else {
+                        second.addAll(data.getA());
+                        strSec = "A";
+                    }
+                    break;
+                case "B":
+                    if (first.isEmpty()) {
+                        first.addAll(data.getB());
+                        strFirst = "B";
+                    } else {
+                        second.addAll(data.getB());
+                        strSec = "B";
+                    }
+                    break;
+                case "C":
+                    if (first.isEmpty()) {
+                        first.addAll(data.getC());
+                        strFirst = "C";
+                    } else {
+                        second.addAll(data.getC());
+                        strSec = "C";
+                    }
+                    break;
+                case "D":
+                    if (first.isEmpty()) {
+                        first.addAll(data.getD());
+                        strFirst = "D";
+                    } else {
+                        second.addAll(data.getD());
+                        strSec = "D";
+                    }
+                    break;
+            }
+        }
+        pnlUniverso.setData("./src/main/java/Resources/universe.png", Color.orange, "Universo", String.valueOf(obCon.getUniverse(first, second)));
+        pnlUnion.setData("./src/main/java/Resources/union.png", Color.orange, "Union", String.valueOf(obCon.getUnion(first, second)));
+        pnlIntersect.setData("./src/main/java/Resources/interseccion.png", Color.orange, "Intersección", String.valueOf(obCon.getIntersect(first, second)));
+        pnlDifference.setData("./src/main/java/Resources/diferencia.png", Color.orange, "Diferencia", String.valueOf(obCon.getDifference(first, second)));
+        pnlSymetricDiff.setData("./src/main/java/Resources/diferencia.png", Color.orange, "Diferencia Simetrica", String.valueOf(obCon.getSimetricDifference(first, second)));
+        pnlComp1.setData("./src/main/java/Resources/complemento.png", Color.orange, "Complemento " + strFirst, String.valueOf(obCon.getComplement(first, second, first)));
+        pnlComp2.setData("./src/main/java/Resources/complemento.png", Color.orange, "Complemento " + strSec, String.valueOf(obCon.getComplement(first, second, second)));
+        pnlCard1.setData("./src/main/java/Resources/cardinalidad.png", Color.orange, "Cardinalidad " + strFirst, String.valueOf(obCon.getCardinality(first)));
+        pnlCard2.setData("./src/main/java/Resources/cardinalidad.png", Color.orange, "Cardinalidad " + strSec, String.valueOf(obCon.getCardinality(second)));
+        pnlCartesian.setData("./src/main/java/Resources/producto.png", Color.orange, "Producto Cartesiano", String.valueOf(obCon.getCartesianProduct(first, second)));
+        pnlPot1.setData("./src/main/java/Resources/potencia.png", Color.orange, "Potencia " + strFirst, String.valueOf(obCon.getConjuntoPotencia(first)));
+        pnlPot2.setData("./src/main/java/Resources/potencia.png", Color.orange, "Potencia " + strSec, String.valueOf(obCon.getConjuntoPotencia(second)));
+    }
+
+    public void genOpCadenas(ArrayList<String> alfabeto) {
+        boolean val = false;
+        String aux[] = new String[txtCadena.getText().length()];
+        for (int i = 0; i < txtCadena.getText().length(); i++) {
+            aux[i] = String.valueOf(txtCadena.getText().charAt(i));
+        }
+        for (String s : aux) {
+            if (alfabeto.contains(s)) {
+                val = true;
+            } else {
+                val = false;
+                break;
+            }
+        }
+
+        if (val) {
+            System.out.println("CADENA CORRECTA!");
+            SwingUtilities.updateComponentTreeUI(pnlResultCad);
+            pnlConcatenacion.setData("./src/main/java/Resources/concatenacion.png", Color.orange, "Concatenación", obCad.getConcatStr(txtCadena.getText(), txtConcat.getText()));
+            pnlPotencia.setData("./src/main/java/Resources/potencia.png", Color.orange, "Potencia", obCad.getPotencia(Integer.parseInt(txtPotencia.getText()), txtCadena.getText()));
+            pnlLongitud.setData("./src/main/java/Resources/longitud.png", Color.orange, "Longitud", String.valueOf(obCad.getLongitud(txtCadena.getText())));
+            pnlPrefijo.setData("./src/main/java/Resources/prefijo.png", Color.orange, "Prefijo", String.valueOf(obCad.getPrefijo(txtCadena.getText())));
+            pnlSufijo.setData("./src/main/java/Resources/sufijo.png", Color.orange, "Sufijo", String.valueOf(obCad.getSufijo(txtCadena.getText())));
+            pnlSubCadenaIzq.setData("./src/main/java/Resources/subcadena.png", Color.orange, "Subcadena Izquierda", obCad.getSubstringLeft(Integer.parseInt(txtSubIzq.getText()), txtCadena.getText()));
+            pnlSubCadenaDer.setData("./src/main/java/Resources/subcadena.png", Color.orange, "Subcadena Derecha", obCad.getSubstringRight(Integer.parseInt(txtSubDer.getText()), txtCadena.getText()));
+            pnlTranspuesta.setData("./src/main/java/Resources/transpuesta.png", Color.orange, "Transpuesta", obCad.getTranspuesta(txtCadena.getText()));
+        } else {
+            System.out.println("LA CADENA NO EXISTE EN EL ALFABETO");
+        }
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGroup = new javax.swing.ButtonGroup();
         pnlPrincipal = new javax.swing.JPanel();
         pnlGenConjuntos = new javax.swing.JPanel();
         pnlInputs = new CustomComponents.PanelRound();
@@ -61,7 +188,8 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         txtD = new javax.swing.JTextField();
-        button1 = new CustomComponents.Button();
+        btnGenerar = new CustomComponents.Button();
+        jLabel16 = new javax.swing.JLabel();
         pnlConjuntos = new CustomComponents.PanelRound();
         pnlA = new CustomComponents.PanelRound();
         jPanel5 = new javax.swing.JPanel();
@@ -100,6 +228,7 @@ public class MainFrame extends javax.swing.JFrame {
         checkConC = new CustomComponents.CheckBox();
         checkConD = new CustomComponents.CheckBox();
         jLabel9 = new javax.swing.JLabel();
+        btnCalcCon = new CustomComponents.Button();
         jPanel13 = new javax.swing.JPanel();
         scrollConjuntos = new javax.swing.JScrollPane();
         pnlResultCon = new javax.swing.JPanel();
@@ -123,8 +252,36 @@ public class MainFrame extends javax.swing.JFrame {
         checkCadC = new CustomComponents.CheckBox();
         checkCadD = new CustomComponents.CheckBox();
         jLabel10 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        txtCadena = new javax.swing.JTextField();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        txtConcat = new javax.swing.JTextField();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        txtPotencia = new javax.swing.JTextField();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        txtSubIzq = new javax.swing.JTextField();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        txtSubDer = new javax.swing.JTextField();
+        btnCalcCad = new CustomComponents.Button();
+        scrollCadenas = new javax.swing.JScrollPane();
+        pnlResultCad = new javax.swing.JPanel();
+        pnlConcatenacion = new CustomComponents.PanelResult();
+        pnlPotencia = new CustomComponents.PanelResult();
+        pnlLongitud = new CustomComponents.PanelResult();
+        pnlPrefijo = new CustomComponents.PanelResult();
+        pnlSufijo = new CustomComponents.PanelResult();
+        pnlSubCadenaIzq = new CustomComponents.PanelResult();
+        pnlSubCadenaDer = new CustomComponents.PanelResult();
+        pnlTranspuesta = new CustomComponents.PanelResult();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1080, 650));
 
         pnlPrincipal.setBackground(new java.awt.Color(30, 30, 30));
         pnlPrincipal.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -134,13 +291,14 @@ public class MainFrame extends javax.swing.JFrame {
         pnlGenConjuntos.setLayout(new java.awt.BorderLayout(0, 10));
 
         pnlInputs.setBackground(new java.awt.Color(50, 50, 50));
-        pnlInputs.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        pnlInputs.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 10, 10, 10));
         pnlInputs.setRoundBottomLeft(15);
         pnlInputs.setRoundBottomRight(15);
         pnlInputs.setRoundTopLeft(15);
         pnlInputs.setRoundTopRight(15);
-        pnlInputs.setLayout(new java.awt.BorderLayout(10, 25));
+        pnlInputs.setLayout(new java.awt.BorderLayout(10, 5));
 
+        pnlTxts.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 10, 0));
         pnlTxts.setOpaque(false);
         pnlTxts.setLayout(new java.awt.GridLayout(4, 1, 10, 10));
 
@@ -150,7 +308,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(102, 99, 254));
         jLabel1.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 200, 0));
-        jLabel1.setText("A");
+        jLabel1.setText("A:");
         jPanel1.add(jLabel1, java.awt.BorderLayout.WEST);
 
         txtA.setBackground(new java.awt.Color(50, 50, 50));
@@ -167,7 +325,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 200, 0));
-        jLabel2.setText("B");
+        jLabel2.setText("B:");
         jPanel2.add(jLabel2, java.awt.BorderLayout.WEST);
 
         txtB.setBackground(new java.awt.Color(50, 50, 50));
@@ -184,7 +342,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 200, 0));
-        jLabel3.setText("C");
+        jLabel3.setText("C:");
         jPanel3.add(jLabel3, java.awt.BorderLayout.WEST);
 
         txtC.setBackground(new java.awt.Color(50, 50, 50));
@@ -201,7 +359,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 200, 0));
-        jLabel4.setText("D");
+        jLabel4.setText("D:");
         jPanel4.add(jLabel4, java.awt.BorderLayout.WEST);
 
         txtD.setBackground(new java.awt.Color(50, 50, 50));
@@ -215,18 +373,29 @@ public class MainFrame extends javax.swing.JFrame {
 
         pnlInputs.add(pnlTxts, java.awt.BorderLayout.CENTER);
 
-        button1.setBackground(new java.awt.Color(255, 153, 102));
-        button1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        button1.setForeground(new java.awt.Color(255, 255, 255));
-        button1.setText("Generar");
-        button1.setBorderColor(new java.awt.Color(255, 153, 102));
-        button1.setColor(new java.awt.Color(255, 153, 102));
-        button1.setColorClick(new java.awt.Color(255, 153, 102));
-        button1.setColorOver(new java.awt.Color(255, 187, 153));
-        button1.setFocusable(false);
-        button1.setFont(new java.awt.Font("Roboto Mono", 1, 18)); // NOI18N
-        button1.setRadius(15);
-        pnlInputs.add(button1, java.awt.BorderLayout.SOUTH);
+        btnGenerar.setBackground(new java.awt.Color(255, 153, 102));
+        btnGenerar.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 5, 0));
+        btnGenerar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGenerar.setText("Generar");
+        btnGenerar.setBorderColor(new java.awt.Color(255, 153, 102));
+        btnGenerar.setColor(new java.awt.Color(255, 153, 102));
+        btnGenerar.setColorClick(new java.awt.Color(255, 153, 102));
+        btnGenerar.setColorOver(new java.awt.Color(255, 187, 153));
+        btnGenerar.setFocusable(false);
+        btnGenerar.setFont(new java.awt.Font("Roboto Mono", 1, 18)); // NOI18N
+        btnGenerar.setRadius(15);
+        btnGenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarActionPerformed(evt);
+            }
+        });
+        pnlInputs.add(btnGenerar, java.awt.BorderLayout.SOUTH);
+
+        jLabel16.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Ingresa los conjuntos");
+        pnlInputs.add(jLabel16, java.awt.BorderLayout.NORTH);
 
         pnlGenConjuntos.add(pnlInputs, java.awt.BorderLayout.NORTH);
 
@@ -271,7 +440,7 @@ public class MainFrame extends javax.swing.JFrame {
         pnlA.add(jPanel5, java.awt.BorderLayout.NORTH);
 
         scrollA.setBorder(null);
-        scrollA.setPreferredSize(new java.awt.Dimension(130, 128));
+        scrollA.setPreferredSize(new java.awt.Dimension(110, 128));
 
         listaA.setBackground(new java.awt.Color(102, 113, 255));
         listaA.setBorder(null);
@@ -320,7 +489,7 @@ public class MainFrame extends javax.swing.JFrame {
         pnlB.add(jPanel7, java.awt.BorderLayout.NORTH);
 
         scrollB.setBorder(null);
-        scrollB.setPreferredSize(new java.awt.Dimension(130, 128));
+        scrollB.setPreferredSize(new java.awt.Dimension(110, 128));
 
         listaB.setBackground(new java.awt.Color(0, 180, 176));
         listaB.setBorder(null);
@@ -369,7 +538,7 @@ public class MainFrame extends javax.swing.JFrame {
         pnlC.add(jPanel9, java.awt.BorderLayout.NORTH);
 
         scrollC.setBorder(null);
-        scrollC.setPreferredSize(new java.awt.Dimension(130, 128));
+        scrollC.setPreferredSize(new java.awt.Dimension(110, 128));
 
         listaC.setBackground(new java.awt.Color(180, 126, 162));
         listaC.setBorder(null);
@@ -418,7 +587,7 @@ public class MainFrame extends javax.swing.JFrame {
         pnlD.add(jPanel11, java.awt.BorderLayout.NORTH);
 
         scrollD.setBorder(null);
-        scrollD.setPreferredSize(new java.awt.Dimension(130, 128));
+        scrollD.setPreferredSize(new java.awt.Dimension(110, 128));
 
         listaD.setBackground(new java.awt.Color(38, 120, 204));
         listaD.setBorder(null);
@@ -439,7 +608,7 @@ public class MainFrame extends javax.swing.JFrame {
         pnlPrincipal.add(pnlGenConjuntos, java.awt.BorderLayout.WEST);
 
         pnlOperaciones.setOpaque(false);
-        pnlOperaciones.setLayout(new java.awt.GridLayout(1, 2, 10, 0));
+        pnlOperaciones.setLayout(new java.awt.GridLayout(1, 2, 10, 10));
 
         pnlOpConjuntos.setBackground(new java.awt.Color(50, 50, 50));
         pnlOpConjuntos.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
@@ -449,6 +618,7 @@ public class MainFrame extends javax.swing.JFrame {
         pnlOpConjuntos.setRoundTopRight(15);
         pnlOpConjuntos.setLayout(new java.awt.BorderLayout());
 
+        pnlCheckBox.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 10, 5));
         pnlCheckBox.setOpaque(false);
         pnlCheckBox.setLayout(new java.awt.BorderLayout());
 
@@ -460,6 +630,11 @@ public class MainFrame extends javax.swing.JFrame {
         checkConA.setText("A");
         checkConA.setFocusable(false);
         checkConA.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        checkConA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkConAActionPerformed(evt);
+            }
+        });
         pnlChecksCon.add(checkConA);
 
         checkConB.setBackground(new java.awt.Color(0, 160, 182));
@@ -467,6 +642,11 @@ public class MainFrame extends javax.swing.JFrame {
         checkConB.setText("B");
         checkConB.setFocusable(false);
         checkConB.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        checkConB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkConBActionPerformed(evt);
+            }
+        });
         pnlChecksCon.add(checkConB);
 
         checkConC.setBackground(new java.awt.Color(224, 108, 159));
@@ -474,6 +654,11 @@ public class MainFrame extends javax.swing.JFrame {
         checkConC.setText("C");
         checkConC.setFocusable(false);
         checkConC.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        checkConC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkConCActionPerformed(evt);
+            }
+        });
         pnlChecksCon.add(checkConC);
 
         checkConD.setBackground(new java.awt.Color(38, 111, 213));
@@ -481,15 +666,38 @@ public class MainFrame extends javax.swing.JFrame {
         checkConD.setText("D");
         checkConD.setFocusable(false);
         checkConD.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        checkConD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkConDActionPerformed(evt);
+            }
+        });
         pnlChecksCon.add(checkConD);
 
         pnlCheckBox.add(pnlChecksCon, java.awt.BorderLayout.CENTER);
 
         jLabel9.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(220, 220, 220));
+        jLabel9.setForeground(new java.awt.Color(255, 200, 0));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Selecciona dos conjuntos");
         pnlCheckBox.add(jLabel9, java.awt.BorderLayout.NORTH);
+
+        btnCalcCon.setBackground(new java.awt.Color(255, 153, 102));
+        btnCalcCon.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 5, 0));
+        btnCalcCon.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalcCon.setText("Calcular");
+        btnCalcCon.setBorderColor(new java.awt.Color(255, 153, 102));
+        btnCalcCon.setColor(new java.awt.Color(255, 153, 102));
+        btnCalcCon.setColorClick(new java.awt.Color(255, 153, 102));
+        btnCalcCon.setColorOver(new java.awt.Color(255, 187, 153));
+        btnCalcCon.setFocusable(false);
+        btnCalcCon.setFont(new java.awt.Font("Roboto Mono", 1, 18)); // NOI18N
+        btnCalcCon.setRadius(15);
+        btnCalcCon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcConActionPerformed(evt);
+            }
+        });
+        pnlCheckBox.add(btnCalcCon, java.awt.BorderLayout.SOUTH);
 
         pnlOpConjuntos.add(pnlCheckBox, java.awt.BorderLayout.NORTH);
 
@@ -499,21 +707,46 @@ public class MainFrame extends javax.swing.JFrame {
         scrollConjuntos.setBackground(new java.awt.Color(50, 50, 50));
         scrollConjuntos.setBorder(null);
         scrollConjuntos.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollConjuntos.setViewportBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         pnlResultCon.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         pnlResultCon.setOpaque(false);
         pnlResultCon.setLayout(new java.awt.GridLayout(12, 1, 0, 5));
+
+        pnlUniverso.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlUniverso);
+
+        pnlUnion.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlUnion);
+
+        pnlIntersect.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlIntersect);
+
+        pnlDifference.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlDifference);
+
+        pnlSymetricDiff.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlSymetricDiff);
+
+        pnlComp1.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlComp1);
+
+        pnlComp2.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlComp2);
+
+        pnlCard1.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlCard1);
+
+        pnlCard2.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlCard2);
+
+        pnlCartesian.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlCartesian);
+
+        pnlPot1.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlPot1);
+
+        pnlPot2.setBackground(new java.awt.Color(60, 60, 60));
         pnlResultCon.add(pnlPot2);
 
         scrollConjuntos.setViewportView(pnlResultCon);
@@ -532,6 +765,7 @@ public class MainFrame extends javax.swing.JFrame {
         pnlOpCadenas.setRoundTopRight(15);
         pnlOpCadenas.setLayout(new java.awt.BorderLayout());
 
+        pnlCheckBox1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 10, 5));
         pnlCheckBox1.setOpaque(false);
         pnlCheckBox1.setLayout(new java.awt.BorderLayout());
 
@@ -539,6 +773,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
 
         checkCadA.setBackground(new java.awt.Color(102, 99, 254));
+        btnGroup.add(checkCadA);
         checkCadA.setForeground(new java.awt.Color(220, 220, 220));
         checkCadA.setText("A");
         checkCadA.setFocusable(false);
@@ -546,6 +781,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel15.add(checkCadA);
 
         checkCadB.setBackground(new java.awt.Color(0, 160, 182));
+        btnGroup.add(checkCadB);
         checkCadB.setForeground(new java.awt.Color(220, 220, 220));
         checkCadB.setText("B");
         checkCadB.setFocusable(false);
@@ -553,6 +789,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel15.add(checkCadB);
 
         checkCadC.setBackground(new java.awt.Color(224, 108, 159));
+        btnGroup.add(checkCadC);
         checkCadC.setForeground(new java.awt.Color(220, 220, 220));
         checkCadC.setText("C");
         checkCadC.setFocusable(false);
@@ -560,6 +797,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel15.add(checkCadC);
 
         checkCadD.setBackground(new java.awt.Color(38, 111, 213));
+        btnGroup.add(checkCadD);
         checkCadD.setForeground(new java.awt.Color(220, 220, 220));
         checkCadD.setText("D");
         checkCadD.setFocusable(false);
@@ -569,12 +807,162 @@ public class MainFrame extends javax.swing.JFrame {
         pnlCheckBox1.add(jPanel15, java.awt.BorderLayout.CENTER);
 
         jLabel10.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(220, 220, 220));
+        jLabel10.setForeground(new java.awt.Color(255, 200, 0));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Selecciona un alfabeto");
         pnlCheckBox1.add(jLabel10, java.awt.BorderLayout.NORTH);
 
+        jPanel14.setOpaque(false);
+        jPanel14.setLayout(new java.awt.GridLayout(6, 1, 0, 5));
+
+        jPanel16.setOpaque(false);
+        jPanel16.setLayout(new java.awt.BorderLayout(5, 0));
+
+        jLabel11.setBackground(new java.awt.Color(102, 99, 254));
+        jLabel11.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel11.setText("Cadena:");
+        jPanel16.add(jLabel11, java.awt.BorderLayout.WEST);
+
+        txtCadena.setBackground(new java.awt.Color(50, 50, 50));
+        txtCadena.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
+        txtCadena.setForeground(new java.awt.Color(200, 200, 200));
+        txtCadena.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtCadena.setCaretColor(new java.awt.Color(200, 200, 200));
+        jPanel16.add(txtCadena, java.awt.BorderLayout.CENTER);
+
+        jPanel14.add(jPanel16);
+
+        jPanel17.setOpaque(false);
+        jPanel17.setLayout(new java.awt.BorderLayout(5, 0));
+
+        jLabel12.setBackground(new java.awt.Color(102, 99, 254));
+        jLabel12.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel12.setText("Cad. Concatenar:");
+        jPanel17.add(jLabel12, java.awt.BorderLayout.WEST);
+
+        txtConcat.setBackground(new java.awt.Color(50, 50, 50));
+        txtConcat.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
+        txtConcat.setForeground(new java.awt.Color(200, 200, 200));
+        txtConcat.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtConcat.setCaretColor(new java.awt.Color(200, 200, 200));
+        jPanel17.add(txtConcat, java.awt.BorderLayout.CENTER);
+
+        jPanel14.add(jPanel17);
+
+        jPanel18.setOpaque(false);
+        jPanel18.setLayout(new java.awt.BorderLayout(5, 0));
+
+        jLabel13.setBackground(new java.awt.Color(102, 99, 254));
+        jLabel13.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel13.setText("Potencia:");
+        jPanel18.add(jLabel13, java.awt.BorderLayout.WEST);
+
+        txtPotencia.setBackground(new java.awt.Color(50, 50, 50));
+        txtPotencia.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
+        txtPotencia.setForeground(new java.awt.Color(200, 200, 200));
+        txtPotencia.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtPotencia.setCaretColor(new java.awt.Color(200, 200, 200));
+        jPanel18.add(txtPotencia, java.awt.BorderLayout.CENTER);
+
+        jPanel14.add(jPanel18);
+
+        jPanel19.setOpaque(false);
+        jPanel19.setLayout(new java.awt.BorderLayout(5, 0));
+
+        jLabel14.setBackground(new java.awt.Color(102, 99, 254));
+        jLabel14.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel14.setText("Subcadena Izq:");
+        jPanel19.add(jLabel14, java.awt.BorderLayout.WEST);
+
+        txtSubIzq.setBackground(new java.awt.Color(50, 50, 50));
+        txtSubIzq.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
+        txtSubIzq.setForeground(new java.awt.Color(200, 200, 200));
+        txtSubIzq.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtSubIzq.setCaretColor(new java.awt.Color(200, 200, 200));
+        jPanel19.add(txtSubIzq, java.awt.BorderLayout.CENTER);
+
+        jPanel14.add(jPanel19);
+
+        jPanel20.setOpaque(false);
+        jPanel20.setLayout(new java.awt.BorderLayout(5, 0));
+
+        jLabel15.setBackground(new java.awt.Color(102, 99, 254));
+        jLabel15.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel15.setText("Subcadena Der:");
+        jPanel20.add(jLabel15, java.awt.BorderLayout.WEST);
+
+        txtSubDer.setBackground(new java.awt.Color(50, 50, 50));
+        txtSubDer.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
+        txtSubDer.setForeground(new java.awt.Color(200, 200, 200));
+        txtSubDer.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtSubDer.setCaretColor(new java.awt.Color(200, 200, 200));
+        jPanel20.add(txtSubDer, java.awt.BorderLayout.CENTER);
+
+        jPanel14.add(jPanel20);
+
+        btnCalcCad.setBackground(new java.awt.Color(255, 153, 102));
+        btnCalcCad.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 5, 0));
+        btnCalcCad.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalcCad.setText("Calcular");
+        btnCalcCad.setBorderColor(new java.awt.Color(255, 153, 102));
+        btnCalcCad.setColor(new java.awt.Color(255, 153, 102));
+        btnCalcCad.setColorClick(new java.awt.Color(255, 153, 102));
+        btnCalcCad.setColorOver(new java.awt.Color(255, 187, 153));
+        btnCalcCad.setFocusable(false);
+        btnCalcCad.setFont(new java.awt.Font("Roboto Mono", 1, 18)); // NOI18N
+        btnCalcCad.setRadius(15);
+        btnCalcCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcCadActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnCalcCad);
+
+        pnlCheckBox1.add(jPanel14, java.awt.BorderLayout.SOUTH);
+
         pnlOpCadenas.add(pnlCheckBox1, java.awt.BorderLayout.NORTH);
+
+        scrollCadenas.setBackground(new java.awt.Color(50, 50, 50));
+        scrollCadenas.setBorder(null);
+        scrollCadenas.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollCadenas.setViewportBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+
+        pnlResultCad.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        pnlResultCad.setOpaque(false);
+        pnlResultCad.setLayout(new java.awt.GridLayout(8, 1, 0, 5));
+
+        pnlConcatenacion.setBackground(new java.awt.Color(60, 60, 60));
+        pnlResultCad.add(pnlConcatenacion);
+
+        pnlPotencia.setBackground(new java.awt.Color(60, 60, 60));
+        pnlResultCad.add(pnlPotencia);
+
+        pnlLongitud.setBackground(new java.awt.Color(60, 60, 60));
+        pnlResultCad.add(pnlLongitud);
+
+        pnlPrefijo.setBackground(new java.awt.Color(60, 60, 60));
+        pnlResultCad.add(pnlPrefijo);
+
+        pnlSufijo.setBackground(new java.awt.Color(60, 60, 60));
+        pnlResultCad.add(pnlSufijo);
+
+        pnlSubCadenaIzq.setBackground(new java.awt.Color(60, 60, 60));
+        pnlResultCad.add(pnlSubCadenaIzq);
+
+        pnlSubCadenaDer.setBackground(new java.awt.Color(60, 60, 60));
+        pnlResultCad.add(pnlSubCadenaDer);
+
+        pnlTranspuesta.setBackground(new java.awt.Color(60, 60, 60));
+        pnlResultCad.add(pnlTranspuesta);
+
+        scrollCadenas.setViewportView(pnlResultCad);
+
+        pnlOpCadenas.add(scrollCadenas, java.awt.BorderLayout.CENTER);
 
         pnlOperaciones.add(pnlOpCadenas);
 
@@ -584,15 +972,85 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
+        data.clearData();
+        manager.setList(listaA, txtA, data.getA());
+        manager.setList(listaB, txtB, data.getB());
+        manager.setList(listaC, txtC, data.getC());
+        manager.setList(listaD, txtD, data.getD());
+    }//GEN-LAST:event_btnGenerarActionPerformed
+
+    private void btnCalcConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcConActionPerformed
+        if (cont == 2) {
+            genOpConjuntos();
+            SwingUtilities.updateComponentTreeUI(pnlResultCon);
+            System.out.println("GENERAR!");
+        } else if (cont == 1) {
+            System.out.println("Solo has seleccionado un conjunto");
+        } else {
+            System.out.println("No se han seleccionado 2 conjuntos");
+        }
+    }//GEN-LAST:event_btnCalcConActionPerformed
+
+    private void btnCalcCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcCadActionPerformed
+        String alfabeto = "";
+        alfabeto = btnGroup.getSelection().getActionCommand();
+        switch (alfabeto) {
+            case "A":
+                genOpCadenas(data.getA());
+                break;
+            case "B":
+                genOpCadenas(data.getB());
+                break;
+            case "C":
+                genOpCadenas(data.getC());
+                break;
+            case "D":
+                genOpCadenas(data.getD());
+                break;
+        }
+    }//GEN-LAST:event_btnCalcCadActionPerformed
+
+    private void checkConAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkConAActionPerformed
+        getConjuntos(checkConA, conjuntos, "A");
+    }//GEN-LAST:event_checkConAActionPerformed
+
+    private void checkConBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkConBActionPerformed
+        getConjuntos(checkConB, conjuntos, "B");
+    }//GEN-LAST:event_checkConBActionPerformed
+
+    private void checkConCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkConCActionPerformed
+        getConjuntos(checkConC, conjuntos, "C");
+    }//GEN-LAST:event_checkConCActionPerformed
+
+    private void checkConDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkConDActionPerformed
+        getConjuntos(checkConD, conjuntos, "D");
+    }//GEN-LAST:event_checkConDActionPerformed
+
+    public void getConjuntos(CheckBox checkBox, ArrayList<String> conjuntos, String conjunto) {
+        if (!checkBox.isSelected()) {
+            cont--;
+            if (conjuntos.contains(conjunto)) {
+                conjuntos.remove(conjunto);
+            }
+        } else {
+            cont++;
+            if (!conjuntos.contains(conjunto)) {
+                conjuntos.add(conjunto);
+            }
+        }
+        System.out.println(cont + " - " + conjuntos);
+    }
 
     /**
      * @param args the command line arguments
@@ -631,7 +1089,10 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private CustomComponents.Button button1;
+    private CustomComponents.Button btnCalcCad;
+    private CustomComponents.Button btnCalcCon;
+    private CustomComponents.Button btnGenerar;
+    private javax.swing.ButtonGroup btnGroup;
     private CustomComponents.CheckBox checkCadA;
     private CustomComponents.CheckBox checkCadB;
     private CustomComponents.CheckBox checkCadC;
@@ -642,6 +1103,12 @@ public class MainFrame extends javax.swing.JFrame {
     private CustomComponents.CheckBox checkConD;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -655,8 +1122,14 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -683,31 +1156,46 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel pnlChecksCon;
     private CustomComponents.PanelResult pnlComp1;
     private CustomComponents.PanelResult pnlComp2;
+    private CustomComponents.PanelResult pnlConcatenacion;
     private CustomComponents.PanelRound pnlConjuntos;
     private CustomComponents.PanelRound pnlD;
     private CustomComponents.PanelResult pnlDifference;
     private javax.swing.JPanel pnlGenConjuntos;
     private CustomComponents.PanelRound pnlInputs;
     private CustomComponents.PanelResult pnlIntersect;
+    private CustomComponents.PanelResult pnlLongitud;
     private CustomComponents.PanelRound pnlOpCadenas;
     private CustomComponents.PanelRound pnlOpConjuntos;
     private javax.swing.JPanel pnlOperaciones;
     private CustomComponents.PanelResult pnlPot1;
     private CustomComponents.PanelResult pnlPot2;
+    private CustomComponents.PanelResult pnlPotencia;
+    private CustomComponents.PanelResult pnlPrefijo;
     private javax.swing.JPanel pnlPrincipal;
+    private javax.swing.JPanel pnlResultCad;
     private javax.swing.JPanel pnlResultCon;
+    private CustomComponents.PanelResult pnlSubCadenaDer;
+    private CustomComponents.PanelResult pnlSubCadenaIzq;
+    private CustomComponents.PanelResult pnlSufijo;
     private CustomComponents.PanelResult pnlSymetricDiff;
+    private CustomComponents.PanelResult pnlTranspuesta;
     private javax.swing.JPanel pnlTxts;
     private CustomComponents.PanelResult pnlUnion;
     private CustomComponents.PanelResult pnlUniverso;
     private javax.swing.JScrollPane scrollA;
     private javax.swing.JScrollPane scrollB;
     private javax.swing.JScrollPane scrollC;
+    private javax.swing.JScrollPane scrollCadenas;
     private javax.swing.JScrollPane scrollConjuntos;
     private javax.swing.JScrollPane scrollD;
     private javax.swing.JTextField txtA;
     private javax.swing.JTextField txtB;
     private javax.swing.JTextField txtC;
+    private javax.swing.JTextField txtCadena;
+    private javax.swing.JTextField txtConcat;
     private javax.swing.JTextField txtD;
+    private javax.swing.JTextField txtPotencia;
+    private javax.swing.JTextField txtSubDer;
+    private javax.swing.JTextField txtSubIzq;
     // End of variables declaration//GEN-END:variables
 }

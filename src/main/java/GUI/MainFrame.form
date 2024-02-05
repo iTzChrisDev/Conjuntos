@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="btnGroup">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1080, 650]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -23,12 +30,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlPrincipal" alignment="0" max="32767" attributes="0"/>
+          <Component id="pnlPrincipal" alignment="0" pref="1080" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlPrincipal" alignment="0" max="32767" attributes="0"/>
+          <Component id="pnlPrincipal" alignment="0" pref="650" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -70,7 +77,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder bottom="5" left="5" right="5" top="5"/>
+                    <EmptyBorder bottom="10" left="10" right="10" top="5"/>
                   </Border>
                 </Property>
                 <Property name="roundBottomLeft" type="int" value="15"/>
@@ -86,11 +93,16 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
                 <Property name="horizontalGap" type="int" value="10"/>
-                <Property name="verticalGap" type="int" value="25"/>
+                <Property name="verticalGap" type="int" value="5"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="pnlTxts">
                   <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                        <EmptyBorder bottom="10" left="0" right="0" top="0"/>
+                      </Border>
+                    </Property>
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                   <Constraints>
@@ -126,7 +138,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="c8" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="A"/>
+                            <Property name="text" type="java.lang.String" value="A:"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -181,7 +193,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="c8" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="B"/>
+                            <Property name="text" type="java.lang.String" value="B:"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -236,7 +248,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="c8" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="C"/>
+                            <Property name="text" type="java.lang.String" value="C:"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -291,7 +303,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="c8" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="D"/>
+                            <Property name="text" type="java.lang.String" value="D:"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -331,14 +343,14 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Component class="CustomComponents.Button" name="button1">
+                <Component class="CustomComponents.Button" name="btnGenerar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="66" green="99" red="ff" type="rgb"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                        <EmptyBorder/>
+                        <EmptyBorder bottom="5" left="0" right="0" top="5"/>
                       </Border>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -363,9 +375,29 @@
                     </Property>
                     <Property name="radius" type="int" value="15"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarActionPerformed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
                       <BorderConstraints direction="South"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel16">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Roboto Mono SemiBold" size="18" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="c8" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Ingresa los conjuntos"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="North"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -491,7 +523,7 @@
                           <Border info="null"/>
                         </Property>
                         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[130, 128]"/>
+                          <Dimension value="[110, 128]"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -631,7 +663,7 @@
                           <Border info="null"/>
                         </Property>
                         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[130, 128]"/>
+                          <Dimension value="[110, 128]"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -771,7 +803,7 @@
                           <Border info="null"/>
                         </Property>
                         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[130, 128]"/>
+                          <Dimension value="[110, 128]"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -911,7 +943,7 @@
                           <Border info="null"/>
                         </Property>
                         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[130, 128]"/>
+                          <Dimension value="[110, 128]"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -977,6 +1009,7 @@
             <Property name="columns" type="int" value="2"/>
             <Property name="horizontalGap" type="int" value="10"/>
             <Property name="rows" type="int" value="1"/>
+            <Property name="verticalGap" type="int" value="10"/>
           </Layout>
           <SubComponents>
             <Container class="CustomComponents.PanelRound" name="pnlOpConjuntos">
@@ -999,6 +1032,11 @@
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="pnlCheckBox">
                   <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                        <EmptyBorder bottom="10" left="5" right="5" top="0"/>
+                      </Border>
+                    </Property>
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                   <Constraints>
@@ -1037,6 +1075,9 @@
                               <Font name="Roboto Mono" size="16" style="1"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkConAActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="CustomComponents.CheckBox" name="checkConB">
                           <Properties>
@@ -1052,6 +1093,9 @@
                               <Font name="Roboto Mono" size="16" style="1"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkConBActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="CustomComponents.CheckBox" name="checkConC">
                           <Properties>
@@ -1067,6 +1111,9 @@
                               <Font name="Roboto Mono" size="16" style="1"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkConCActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="CustomComponents.CheckBox" name="checkConD">
                           <Properties>
@@ -1082,6 +1129,9 @@
                               <Font name="Roboto Mono" size="16" style="1"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkConDActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1091,7 +1141,7 @@
                           <Font name="Roboto Mono SemiBold" size="18" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="dc" green="dc" red="dc" type="rgb"/>
+                          <Color blue="0" green="c8" red="ff" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="Selecciona dos conjuntos"/>
@@ -1099,6 +1149,47 @@
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
                           <BorderConstraints direction="North"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="CustomComponents.Button" name="btnCalcCon">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="66" green="99" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                            <EmptyBorder bottom="5" left="0" right="0" top="5"/>
+                          </Border>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Calcular"/>
+                        <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="66" green="99" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="color" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="66" green="99" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="66" green="99" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="99" green="bb" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="focusable" type="boolean" value="false"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Roboto Mono" size="18" style="1"/>
+                        </Property>
+                        <Property name="radius" type="int" value="15"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcConActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="South"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -1128,6 +1219,11 @@
                           <Border info="null"/>
                         </Property>
                         <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+                        <Property name="viewportBorder" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                            <EmptyBorder bottom="5" left="5" right="5" top="5"/>
+                          </Border>
+                        </Property>
                       </Properties>
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
@@ -1149,28 +1245,88 @@
                           </Layout>
                           <SubComponents>
                             <Component class="CustomComponents.PanelResult" name="pnlUniverso">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlUnion">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlIntersect">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlDifference">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlSymetricDiff">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlComp1">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlComp2">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlCard1">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlCard2">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlCartesian">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlPot1">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="CustomComponents.PanelResult" name="pnlPot2">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                                </Property>
+                              </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -1200,6 +1356,11 @@
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="pnlCheckBox1">
                   <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                        <EmptyBorder bottom="10" left="5" right="5" top="0"/>
+                      </Border>
+                    </Property>
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                   <Constraints>
@@ -1229,6 +1390,9 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fe" green="63" red="66" type="rgb"/>
                             </Property>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="btnGroup"/>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="dc" green="dc" red="dc" type="rgb"/>
                             </Property>
@@ -1243,6 +1407,9 @@
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="b6" green="a0" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="btnGroup"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="dc" green="dc" red="dc" type="rgb"/>
@@ -1259,6 +1426,9 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="9f" green="6c" red="e0" type="rgb"/>
                             </Property>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="btnGroup"/>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="dc" green="dc" red="dc" type="rgb"/>
                             </Property>
@@ -1273,6 +1443,9 @@
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="d5" green="6f" red="26" type="rgb"/>
+                            </Property>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="btnGroup"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="dc" green="dc" red="dc" type="rgb"/>
@@ -1292,7 +1465,7 @@
                           <Font name="Roboto Mono SemiBold" size="18" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="dc" green="dc" red="dc" type="rgb"/>
+                          <Color blue="0" green="c8" red="ff" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="Selecciona un alfabeto"/>
@@ -1303,6 +1476,449 @@
                         </Constraint>
                       </Constraints>
                     </Component>
+                    <Container class="javax.swing.JPanel" name="jPanel14">
+                      <Properties>
+                        <Property name="opaque" type="boolean" value="false"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="South"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                        <Property name="columns" type="int" value="1"/>
+                        <Property name="rows" type="int" value="6"/>
+                        <Property name="verticalGap" type="int" value="5"/>
+                      </Layout>
+                      <SubComponents>
+                        <Container class="javax.swing.JPanel" name="jPanel16">
+                          <Properties>
+                            <Property name="opaque" type="boolean" value="false"/>
+                          </Properties>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
+                            <Property name="horizontalGap" type="int" value="5"/>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel11">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="fe" green="63" red="66" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono SemiBold" size="16" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="c8" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Cadena:"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtCadena">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="32" green="32" red="32" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                                    <MatteColorBorder bottom="1" left="0" right="0" top="0">
+                                      <Color PropertyName="color" blue="0" green="c8" red="ff" type="rgb"/>
+                                    </MatteColorBorder>
+                                  </Border>
+                                </Property>
+                                <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="jPanel17">
+                          <Properties>
+                            <Property name="opaque" type="boolean" value="false"/>
+                          </Properties>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
+                            <Property name="horizontalGap" type="int" value="5"/>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel12">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="fe" green="63" red="66" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono SemiBold" size="16" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="c8" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Cad. Concatenar:"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtConcat">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="32" green="32" red="32" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                                    <MatteColorBorder bottom="1" left="0" right="0" top="0">
+                                      <Color PropertyName="color" blue="0" green="c8" red="ff" type="rgb"/>
+                                    </MatteColorBorder>
+                                  </Border>
+                                </Property>
+                                <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="jPanel18">
+                          <Properties>
+                            <Property name="opaque" type="boolean" value="false"/>
+                          </Properties>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
+                            <Property name="horizontalGap" type="int" value="5"/>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel13">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="fe" green="63" red="66" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono SemiBold" size="16" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="c8" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Potencia:"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtPotencia">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="32" green="32" red="32" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                                    <MatteColorBorder bottom="1" left="0" right="0" top="0">
+                                      <Color PropertyName="color" blue="0" green="c8" red="ff" type="rgb"/>
+                                    </MatteColorBorder>
+                                  </Border>
+                                </Property>
+                                <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="jPanel19">
+                          <Properties>
+                            <Property name="opaque" type="boolean" value="false"/>
+                          </Properties>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
+                            <Property name="horizontalGap" type="int" value="5"/>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel14">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="fe" green="63" red="66" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono SemiBold" size="16" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="c8" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Subcadena Izq:"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtSubIzq">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="32" green="32" red="32" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                                    <MatteColorBorder bottom="1" left="0" right="0" top="0">
+                                      <Color PropertyName="color" blue="0" green="c8" red="ff" type="rgb"/>
+                                    </MatteColorBorder>
+                                  </Border>
+                                </Property>
+                                <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="jPanel20">
+                          <Properties>
+                            <Property name="opaque" type="boolean" value="false"/>
+                          </Properties>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
+                            <Property name="horizontalGap" type="int" value="5"/>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel15">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="fe" green="63" red="66" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono SemiBold" size="16" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="c8" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Subcadena Der:"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtSubDer">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="32" green="32" red="32" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Roboto Mono" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                                    <MatteColorBorder bottom="1" left="0" right="0" top="0">
+                                      <Color PropertyName="color" blue="0" green="c8" red="ff" type="rgb"/>
+                                    </MatteColorBorder>
+                                  </Border>
+                                </Property>
+                                <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Component class="CustomComponents.Button" name="btnCalcCad">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder bottom="5" left="0" right="0" top="5"/>
+                              </Border>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Calcular"/>
+                            <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="color" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="bb" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="focusable" type="boolean" value="false"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Roboto Mono" size="18" style="1"/>
+                            </Property>
+                            <Property name="radius" type="int" value="15"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcCadActionPerformed"/>
+                          </Events>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="scrollCadenas">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="32" green="32" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
+                    <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+                    <Property name="viewportBorder" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                        <EmptyBorder bottom="5" left="5" right="5" top="5"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="Center"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="pnlResultCad">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                            <EmptyBorder bottom="5" left="5" right="5" top="5"/>
+                          </Border>
+                        </Property>
+                        <Property name="opaque" type="boolean" value="false"/>
+                      </Properties>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                        <Property name="columns" type="int" value="1"/>
+                        <Property name="rows" type="int" value="8"/>
+                        <Property name="verticalGap" type="int" value="5"/>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="CustomComponents.PanelResult" name="pnlConcatenacion">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.PanelResult" name="pnlPotencia">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.PanelResult" name="pnlLongitud">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.PanelResult" name="pnlPrefijo">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.PanelResult" name="pnlSufijo">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.PanelResult" name="pnlSubCadenaIzq">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.PanelResult" name="pnlSubCadenaDer">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.PanelResult" name="pnlTranspuesta">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
                   </SubComponents>
                 </Container>
               </SubComponents>

@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 public class PanelResult extends JPanel {
 
@@ -26,15 +27,17 @@ public class PanelResult extends JPanel {
     }
 
     private void initComponents() {
+        this.removeAll();
         this.setLayout(new GridLayout(1, 1));
         this.setOpaque(false);
         pnlMain = new PanelRound();
+        pnlMain.setBorder(new EmptyBorder(5, 5, 5, 5));
         pnlMain.setRoundBottomLeft(15);
         pnlMain.setRoundBottomRight(15);
         pnlMain.setRoundTopLeft(15);
         pnlMain.setRoundTopRight(15);
 
-        pnlMain.setLayout(new BorderLayout(10, 10));
+        pnlMain.setLayout(new BorderLayout(5, 0));
         pnlMain.add(new JLabel(new ImageIcon(pathImage)), BorderLayout.WEST);
         pnlMain.setBackground(bgColor);
 
@@ -48,7 +51,7 @@ public class PanelResult extends JPanel {
 
         JLabel lblResult = new JLabel();
         lblResult.setFont(new Font("Roboto Mono", Font.PLAIN, 16));
-        lblResult.setText("{" + result + "}");
+        lblResult.setText(result);
 
         pnl.add(lblOperation, BorderLayout.NORTH);
         pnl.add(lblResult, BorderLayout.CENTER);
