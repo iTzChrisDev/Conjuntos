@@ -11,6 +11,7 @@ com\mycompany\conjuntos\Conjuntos.class
 CustomComponents\ScrollBarCustom.class
 GUI\MainFrame.class
 CustomComponents\TextPrompt.class
+CustomComponents\PanelResult.class
 Funciones\Data.class
 CustomComponents\Button.class
 CustomComponents\TextPrompt$Show.class

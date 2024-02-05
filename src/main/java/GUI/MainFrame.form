@@ -3,9 +3,6 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[900, 600]"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -127,7 +124,7 @@
                               <Font name="Roboto Mono SemiBold" size="18" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                              <Color blue="0" green="c8" red="ff" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="A"/>
                           </Properties>
@@ -151,7 +148,7 @@
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                                 <MatteColorBorder bottom="1" left="0" right="0" top="0">
-                                  <Color PropertyName="color" blue="66" green="99" red="ff" type="rgb"/>
+                                  <Color PropertyName="color" blue="0" green="c8" red="ff" type="rgb"/>
                                 </MatteColorBorder>
                               </Border>
                             </Property>
@@ -182,7 +179,7 @@
                               <Font name="Roboto Mono SemiBold" size="18" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                              <Color blue="0" green="c8" red="ff" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="B"/>
                           </Properties>
@@ -206,7 +203,7 @@
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                                 <MatteColorBorder bottom="1" left="0" right="0" top="0">
-                                  <Color PropertyName="color" blue="66" green="99" red="ff" type="rgb"/>
+                                  <Color PropertyName="color" blue="0" green="c8" red="ff" type="rgb"/>
                                 </MatteColorBorder>
                               </Border>
                             </Property>
@@ -237,7 +234,7 @@
                               <Font name="Roboto Mono SemiBold" size="18" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                              <Color blue="0" green="c8" red="ff" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="C"/>
                           </Properties>
@@ -261,7 +258,7 @@
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                                 <MatteColorBorder bottom="1" left="0" right="0" top="0">
-                                  <Color PropertyName="color" blue="66" green="99" red="ff" type="rgb"/>
+                                  <Color PropertyName="color" blue="0" green="c8" red="ff" type="rgb"/>
                                 </MatteColorBorder>
                               </Border>
                             </Property>
@@ -292,7 +289,7 @@
                               <Font name="Roboto Mono SemiBold" size="18" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                              <Color blue="0" green="c8" red="ff" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="D"/>
                           </Properties>
@@ -316,7 +313,7 @@
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                                 <MatteColorBorder bottom="1" left="0" right="0" top="0">
-                                  <Color PropertyName="color" blue="66" green="99" red="ff" type="rgb"/>
+                                  <Color PropertyName="color" blue="0" green="c8" red="ff" type="rgb"/>
                                 </MatteColorBorder>
                               </Border>
                             </Property>
@@ -441,7 +438,7 @@
                             </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                                <EmptyBorder bottom="1" left="5" right="5" top="1"/>
+                                <EmptyBorder bottom="0" left="6" right="6" top="0"/>
                               </Border>
                             </Property>
                             <Property name="roundBottomLeft" type="int" value="50"/>
@@ -581,7 +578,7 @@
                             </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                                <EmptyBorder bottom="1" left="5" right="5" top="1"/>
+                                <EmptyBorder bottom="0" left="6" right="6" top="0"/>
                               </Border>
                             </Property>
                             <Property name="roundBottomLeft" type="int" value="50"/>
@@ -721,7 +718,7 @@
                             </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                                <EmptyBorder bottom="1" left="5" right="5" top="1"/>
+                                <EmptyBorder bottom="0" left="6" right="6" top="0"/>
                               </Border>
                             </Property>
                             <Property name="roundBottomLeft" type="int" value="50"/>
@@ -861,7 +858,7 @@
                             </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                                <EmptyBorder bottom="1" left="5" right="5" top="1"/>
+                                <EmptyBorder bottom="0" left="6" right="6" top="0"/>
                               </Border>
                             </Property>
                             <Property name="roundBottomLeft" type="int" value="50"/>
@@ -1000,30 +997,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="jPanel13">
-                  <Properties>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-                      <BorderConstraints direction="Center"/>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="270" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="523" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
-                <Container class="javax.swing.JPanel" name="jPanel15">
+                <Container class="javax.swing.JPanel" name="pnlCheckBox">
                   <Properties>
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
@@ -1035,7 +1009,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel14">
+                    <Container class="javax.swing.JPanel" name="pnlChecksCon">
                       <Properties>
                         <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
@@ -1045,12 +1019,11 @@
                         </Constraint>
                       </Constraints>
 
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-                        <Property name="columns" type="int" value="0"/>
-                        <Property name="rows" type="int" value="1"/>
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
+                        <Property name="horizontalGap" type="int" value="30"/>
                       </Layout>
                       <SubComponents>
-                        <Component class="CustomComponents.CheckBox" name="checkA">
+                        <Component class="CustomComponents.CheckBox" name="checkConA">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fe" green="63" red="66" type="rgb"/>
@@ -1061,11 +1034,11 @@
                             <Property name="text" type="java.lang.String" value="A"/>
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Roboto Mono" size="14" style="1"/>
+                              <Font name="Roboto Mono" size="16" style="1"/>
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="CustomComponents.CheckBox" name="checkB">
+                        <Component class="CustomComponents.CheckBox" name="checkConB">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="b6" green="a0" red="0" type="rgb"/>
@@ -1076,11 +1049,11 @@
                             <Property name="text" type="java.lang.String" value="B"/>
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Roboto Mono" size="14" style="1"/>
+                              <Font name="Roboto Mono" size="16" style="1"/>
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="CustomComponents.CheckBox" name="checkC">
+                        <Component class="CustomComponents.CheckBox" name="checkConC">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="9f" green="6c" red="e0" type="rgb"/>
@@ -1091,11 +1064,11 @@
                             <Property name="text" type="java.lang.String" value="C"/>
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Roboto Mono" size="14" style="1"/>
+                              <Font name="Roboto Mono" size="16" style="1"/>
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="CustomComponents.CheckBox" name="checkD">
+                        <Component class="CustomComponents.CheckBox" name="checkConD">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="d5" green="6f" red="26" type="rgb"/>
@@ -1106,7 +1079,7 @@
                             <Property name="text" type="java.lang.String" value="D"/>
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Roboto Mono" size="14" style="1"/>
+                              <Font name="Roboto Mono" size="16" style="1"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -1121,7 +1094,7 @@
                           <Color blue="dc" green="dc" red="dc" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Elige dos conjuntos"/>
+                        <Property name="text" type="java.lang.String" value="Selecciona dos conjuntos"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -1129,6 +1102,80 @@
                         </Constraint>
                       </Constraints>
                     </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel13">
+                  <Properties>
+                    <Property name="opaque" type="boolean" value="false"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="Center"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                    <Property name="columns" type="int" value="0"/>
+                    <Property name="rows" type="int" value="1"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="scrollConjuntos">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="32" green="32" red="32" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="null"/>
+                        </Property>
+                        <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+                      </Properties>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Container class="javax.swing.JPanel" name="pnlResultCon">
+                          <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder bottom="5" left="5" right="5" top="5"/>
+                              </Border>
+                            </Property>
+                            <Property name="opaque" type="boolean" value="false"/>
+                          </Properties>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                            <Property name="columns" type="int" value="1"/>
+                            <Property name="rows" type="int" value="12"/>
+                            <Property name="verticalGap" type="int" value="5"/>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="CustomComponents.PanelResult" name="pnlUniverso">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlUnion">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlIntersect">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlDifference">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlSymetricDiff">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlComp1">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlComp2">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlCard1">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlCard2">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlCartesian">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlPot1">
+                            </Component>
+                            <Component class="CustomComponents.PanelResult" name="pnlPot2">
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
                   </SubComponents>
                 </Container>
               </SubComponents>
@@ -1150,6 +1197,115 @@
               </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="pnlCheckBox1">
+                  <Properties>
+                    <Property name="opaque" type="boolean" value="false"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="North"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="jPanel15">
+                      <Properties>
+                        <Property name="opaque" type="boolean" value="false"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="Center"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
+                        <Property name="horizontalGap" type="int" value="30"/>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="CustomComponents.CheckBox" name="checkCadA">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="fe" green="63" red="66" type="rgb"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="dc" green="dc" red="dc" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="A"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Roboto Mono" size="16" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.CheckBox" name="checkCadB">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="b6" green="a0" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="dc" green="dc" red="dc" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="B"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Roboto Mono" size="16" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.CheckBox" name="checkCadC">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="9f" green="6c" red="e0" type="rgb"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="dc" green="dc" red="dc" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="C"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Roboto Mono" size="16" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="CustomComponents.CheckBox" name="checkCadD">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="d5" green="6f" red="26" type="rgb"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="dc" green="dc" red="dc" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="D"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Roboto Mono" size="16" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="jLabel10">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Roboto Mono SemiBold" size="18" style="0"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="dc" green="dc" red="dc" type="rgb"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="text" type="java.lang.String" value="Selecciona un alfabeto"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="North"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
             </Container>
           </SubComponents>
         </Container>

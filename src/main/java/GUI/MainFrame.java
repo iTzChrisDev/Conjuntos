@@ -14,7 +14,7 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         initComponentsCustom();
         setLocationRelativeTo(this);
-        
+
         data = new Data();
         manager = new ListManager();
     }
@@ -24,6 +24,21 @@ public class MainFrame extends javax.swing.JFrame {
         scrollB.setVerticalScrollBar(new ScrollBarCustom(new Color(0, 160, 150), new Color(0, 106, 121)));
         scrollC.setVerticalScrollBar(new ScrollBarCustom(new Color(224, 108, 159), new Color(149, 72, 106)));
         scrollD.setVerticalScrollBar(new ScrollBarCustom(new Color(38, 111, 213), new Color(25, 74, 142)));
+        scrollConjuntos.getViewport().setBackground(new Color(50, 50, 50));
+        scrollConjuntos.setVerticalScrollBar(new ScrollBarCustom(new Color(50, 50, 50), new Color(255, 153, 102)));
+
+        pnlUniverso.setData("", Color.orange, "Universo", "1,2,3,4,5,2,3");
+        pnlUnion.setData("", Color.orange, "Union", "1,2,3,4,5,2,3");
+        pnlIntersect.setData("", Color.orange, "Intersección", "1,2,3,4,5,2,3");
+        pnlDifference.setData("", Color.orange, "Diferencia", "1,2,3,4,5,2,3");
+        pnlSymetricDiff.setData("", Color.orange, "Diferencia Simetrica", "1,2,3,4,5,2,3");
+        pnlComp1.setData("", Color.orange, "Complemento 1", "1,2,3,4,5,2,3");
+        pnlComp2.setData("", Color.orange, "Complemento 2", "1,2,3,4,5,2,3");
+        pnlCard1.setData("", Color.orange, "Cardinalidad 1", "1,2,3,4,5,2,3");
+        pnlCard2.setData("", Color.orange, "Cardinalidad 2", "1,2,3,4,5,2,3");
+        pnlCartesian.setData("", Color.orange, "Producto Cartesiano", "1,2,3,4,5,2,3");
+        pnlPot1.setData("", Color.orange, "Potencia 1", "1,2,3,4,5,2,3");
+        pnlPot2.setData("", Color.orange, "Potencia 2", "1,2,3,4,5,2,3");
     }
 
     @SuppressWarnings("unchecked")
@@ -78,18 +93,38 @@ public class MainFrame extends javax.swing.JFrame {
         listaD = new javax.swing.JList<>();
         pnlOperaciones = new javax.swing.JPanel();
         pnlOpConjuntos = new CustomComponents.PanelRound();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        checkA = new CustomComponents.CheckBox();
-        checkB = new CustomComponents.CheckBox();
-        checkC = new CustomComponents.CheckBox();
-        checkD = new CustomComponents.CheckBox();
+        pnlCheckBox = new javax.swing.JPanel();
+        pnlChecksCon = new javax.swing.JPanel();
+        checkConA = new CustomComponents.CheckBox();
+        checkConB = new CustomComponents.CheckBox();
+        checkConC = new CustomComponents.CheckBox();
+        checkConD = new CustomComponents.CheckBox();
         jLabel9 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        scrollConjuntos = new javax.swing.JScrollPane();
+        pnlResultCon = new javax.swing.JPanel();
+        pnlUniverso = new CustomComponents.PanelResult();
+        pnlUnion = new CustomComponents.PanelResult();
+        pnlIntersect = new CustomComponents.PanelResult();
+        pnlDifference = new CustomComponents.PanelResult();
+        pnlSymetricDiff = new CustomComponents.PanelResult();
+        pnlComp1 = new CustomComponents.PanelResult();
+        pnlComp2 = new CustomComponents.PanelResult();
+        pnlCard1 = new CustomComponents.PanelResult();
+        pnlCard2 = new CustomComponents.PanelResult();
+        pnlCartesian = new CustomComponents.PanelResult();
+        pnlPot1 = new CustomComponents.PanelResult();
+        pnlPot2 = new CustomComponents.PanelResult();
         pnlOpCadenas = new CustomComponents.PanelRound();
+        pnlCheckBox1 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        checkCadA = new CustomComponents.CheckBox();
+        checkCadB = new CustomComponents.CheckBox();
+        checkCadC = new CustomComponents.CheckBox();
+        checkCadD = new CustomComponents.CheckBox();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 600));
 
         pnlPrincipal.setBackground(new java.awt.Color(30, 30, 30));
         pnlPrincipal.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -114,14 +149,14 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(102, 99, 254));
         jLabel1.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 153, 102));
+        jLabel1.setForeground(new java.awt.Color(255, 200, 0));
         jLabel1.setText("A");
         jPanel1.add(jLabel1, java.awt.BorderLayout.WEST);
 
         txtA.setBackground(new java.awt.Color(50, 50, 50));
         txtA.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtA.setForeground(new java.awt.Color(200, 200, 200));
-        txtA.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 153, 102)));
+        txtA.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
         txtA.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel1.add(txtA, java.awt.BorderLayout.CENTER);
 
@@ -131,14 +166,14 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.BorderLayout(5, 0));
 
         jLabel2.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 153, 102));
+        jLabel2.setForeground(new java.awt.Color(255, 200, 0));
         jLabel2.setText("B");
         jPanel2.add(jLabel2, java.awt.BorderLayout.WEST);
 
         txtB.setBackground(new java.awt.Color(50, 50, 50));
         txtB.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtB.setForeground(new java.awt.Color(200, 200, 200));
-        txtB.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 153, 102)));
+        txtB.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
         txtB.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel2.add(txtB, java.awt.BorderLayout.CENTER);
 
@@ -148,14 +183,14 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel3.setLayout(new java.awt.BorderLayout(5, 0));
 
         jLabel3.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 153, 102));
+        jLabel3.setForeground(new java.awt.Color(255, 200, 0));
         jLabel3.setText("C");
         jPanel3.add(jLabel3, java.awt.BorderLayout.WEST);
 
         txtC.setBackground(new java.awt.Color(50, 50, 50));
         txtC.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtC.setForeground(new java.awt.Color(200, 200, 200));
-        txtC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 153, 102)));
+        txtC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
         txtC.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel3.add(txtC, java.awt.BorderLayout.CENTER);
 
@@ -165,14 +200,14 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel4.setLayout(new java.awt.BorderLayout(5, 0));
 
         jLabel4.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 153, 102));
+        jLabel4.setForeground(new java.awt.Color(255, 200, 0));
         jLabel4.setText("D");
         jPanel4.add(jLabel4, java.awt.BorderLayout.WEST);
 
         txtD.setBackground(new java.awt.Color(50, 50, 50));
         txtD.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtD.setForeground(new java.awt.Color(200, 200, 200));
-        txtD.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 153, 102)));
+        txtD.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
         txtD.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel4.add(txtD, java.awt.BorderLayout.CENTER);
 
@@ -215,7 +250,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel5.setLayout(new java.awt.BorderLayout());
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 5, 1, 5));
+        panelRound1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 6, 0, 6));
         panelRound1.setRoundBottomLeft(50);
         panelRound1.setRoundBottomRight(50);
         panelRound1.setRoundTopLeft(50);
@@ -264,7 +299,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel7.setLayout(new java.awt.BorderLayout());
 
         panelRound2.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 5, 1, 5));
+        panelRound2.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 6, 0, 6));
         panelRound2.setRoundBottomLeft(50);
         panelRound2.setRoundBottomRight(50);
         panelRound2.setRoundTopLeft(50);
@@ -313,7 +348,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel9.setLayout(new java.awt.BorderLayout());
 
         panelRound3.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 5, 1, 5));
+        panelRound3.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 6, 0, 6));
         panelRound3.setRoundBottomLeft(50);
         panelRound3.setRoundBottomRight(50);
         panelRound3.setRoundTopLeft(50);
@@ -362,7 +397,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel11.setLayout(new java.awt.BorderLayout());
 
         panelRound4.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 5, 1, 5));
+        panelRound4.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 6, 0, 6));
         panelRound4.setRoundBottomLeft(50);
         panelRound4.setRoundBottomRight(50);
         panelRound4.setRoundTopLeft(50);
@@ -414,64 +449,78 @@ public class MainFrame extends javax.swing.JFrame {
         pnlOpConjuntos.setRoundTopRight(15);
         pnlOpConjuntos.setLayout(new java.awt.BorderLayout());
 
-        jPanel13.setOpaque(false);
+        pnlCheckBox.setOpaque(false);
+        pnlCheckBox.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
-        );
+        pnlChecksCon.setOpaque(false);
+        pnlChecksCon.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
 
-        pnlOpConjuntos.add(jPanel13, java.awt.BorderLayout.CENTER);
+        checkConA.setBackground(new java.awt.Color(102, 99, 254));
+        checkConA.setForeground(new java.awt.Color(220, 220, 220));
+        checkConA.setText("A");
+        checkConA.setFocusable(false);
+        checkConA.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        pnlChecksCon.add(checkConA);
 
-        jPanel15.setOpaque(false);
-        jPanel15.setLayout(new java.awt.BorderLayout());
+        checkConB.setBackground(new java.awt.Color(0, 160, 182));
+        checkConB.setForeground(new java.awt.Color(220, 220, 220));
+        checkConB.setText("B");
+        checkConB.setFocusable(false);
+        checkConB.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        pnlChecksCon.add(checkConB);
 
-        jPanel14.setOpaque(false);
-        jPanel14.setLayout(new java.awt.GridLayout());
+        checkConC.setBackground(new java.awt.Color(224, 108, 159));
+        checkConC.setForeground(new java.awt.Color(220, 220, 220));
+        checkConC.setText("C");
+        checkConC.setFocusable(false);
+        checkConC.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        pnlChecksCon.add(checkConC);
 
-        checkA.setBackground(new java.awt.Color(102, 99, 254));
-        checkA.setForeground(new java.awt.Color(220, 220, 220));
-        checkA.setText("A");
-        checkA.setFocusable(false);
-        checkA.setFont(new java.awt.Font("Roboto Mono", 1, 14)); // NOI18N
-        jPanel14.add(checkA);
+        checkConD.setBackground(new java.awt.Color(38, 111, 213));
+        checkConD.setForeground(new java.awt.Color(220, 220, 220));
+        checkConD.setText("D");
+        checkConD.setFocusable(false);
+        checkConD.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        pnlChecksCon.add(checkConD);
 
-        checkB.setBackground(new java.awt.Color(0, 160, 182));
-        checkB.setForeground(new java.awt.Color(220, 220, 220));
-        checkB.setText("B");
-        checkB.setFocusable(false);
-        checkB.setFont(new java.awt.Font("Roboto Mono", 1, 14)); // NOI18N
-        jPanel14.add(checkB);
-
-        checkC.setBackground(new java.awt.Color(224, 108, 159));
-        checkC.setForeground(new java.awt.Color(220, 220, 220));
-        checkC.setText("C");
-        checkC.setFocusable(false);
-        checkC.setFont(new java.awt.Font("Roboto Mono", 1, 14)); // NOI18N
-        jPanel14.add(checkC);
-
-        checkD.setBackground(new java.awt.Color(38, 111, 213));
-        checkD.setForeground(new java.awt.Color(220, 220, 220));
-        checkD.setText("D");
-        checkD.setFocusable(false);
-        checkD.setFont(new java.awt.Font("Roboto Mono", 1, 14)); // NOI18N
-        jPanel14.add(checkD);
-
-        jPanel15.add(jPanel14, java.awt.BorderLayout.CENTER);
+        pnlCheckBox.add(pnlChecksCon, java.awt.BorderLayout.CENTER);
 
         jLabel9.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(220, 220, 220));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Elige dos conjuntos");
-        jPanel15.add(jLabel9, java.awt.BorderLayout.NORTH);
+        jLabel9.setText("Selecciona dos conjuntos");
+        pnlCheckBox.add(jLabel9, java.awt.BorderLayout.NORTH);
 
-        pnlOpConjuntos.add(jPanel15, java.awt.BorderLayout.NORTH);
+        pnlOpConjuntos.add(pnlCheckBox, java.awt.BorderLayout.NORTH);
+
+        jPanel13.setOpaque(false);
+        jPanel13.setLayout(new java.awt.GridLayout(1, 0));
+
+        scrollConjuntos.setBackground(new java.awt.Color(50, 50, 50));
+        scrollConjuntos.setBorder(null);
+        scrollConjuntos.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        pnlResultCon.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        pnlResultCon.setOpaque(false);
+        pnlResultCon.setLayout(new java.awt.GridLayout(12, 1, 0, 5));
+        pnlResultCon.add(pnlUniverso);
+        pnlResultCon.add(pnlUnion);
+        pnlResultCon.add(pnlIntersect);
+        pnlResultCon.add(pnlDifference);
+        pnlResultCon.add(pnlSymetricDiff);
+        pnlResultCon.add(pnlComp1);
+        pnlResultCon.add(pnlComp2);
+        pnlResultCon.add(pnlCard1);
+        pnlResultCon.add(pnlCard2);
+        pnlResultCon.add(pnlCartesian);
+        pnlResultCon.add(pnlPot1);
+        pnlResultCon.add(pnlPot2);
+
+        scrollConjuntos.setViewportView(pnlResultCon);
+
+        jPanel13.add(scrollConjuntos);
+
+        pnlOpConjuntos.add(jPanel13, java.awt.BorderLayout.CENTER);
 
         pnlOperaciones.add(pnlOpConjuntos);
 
@@ -482,6 +531,51 @@ public class MainFrame extends javax.swing.JFrame {
         pnlOpCadenas.setRoundTopLeft(15);
         pnlOpCadenas.setRoundTopRight(15);
         pnlOpCadenas.setLayout(new java.awt.BorderLayout());
+
+        pnlCheckBox1.setOpaque(false);
+        pnlCheckBox1.setLayout(new java.awt.BorderLayout());
+
+        jPanel15.setOpaque(false);
+        jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
+
+        checkCadA.setBackground(new java.awt.Color(102, 99, 254));
+        checkCadA.setForeground(new java.awt.Color(220, 220, 220));
+        checkCadA.setText("A");
+        checkCadA.setFocusable(false);
+        checkCadA.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        jPanel15.add(checkCadA);
+
+        checkCadB.setBackground(new java.awt.Color(0, 160, 182));
+        checkCadB.setForeground(new java.awt.Color(220, 220, 220));
+        checkCadB.setText("B");
+        checkCadB.setFocusable(false);
+        checkCadB.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        jPanel15.add(checkCadB);
+
+        checkCadC.setBackground(new java.awt.Color(224, 108, 159));
+        checkCadC.setForeground(new java.awt.Color(220, 220, 220));
+        checkCadC.setText("C");
+        checkCadC.setFocusable(false);
+        checkCadC.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        jPanel15.add(checkCadC);
+
+        checkCadD.setBackground(new java.awt.Color(38, 111, 213));
+        checkCadD.setForeground(new java.awt.Color(220, 220, 220));
+        checkCadD.setText("D");
+        checkCadD.setFocusable(false);
+        checkCadD.setFont(new java.awt.Font("Roboto Mono", 1, 16)); // NOI18N
+        jPanel15.add(checkCadD);
+
+        pnlCheckBox1.add(jPanel15, java.awt.BorderLayout.CENTER);
+
+        jLabel10.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(220, 220, 220));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Selecciona un alfabeto");
+        pnlCheckBox1.add(jLabel10, java.awt.BorderLayout.NORTH);
+
+        pnlOpCadenas.add(pnlCheckBox1, java.awt.BorderLayout.NORTH);
+
         pnlOperaciones.add(pnlOpCadenas);
 
         pnlPrincipal.add(pnlOperaciones, java.awt.BorderLayout.CENTER);
@@ -538,11 +632,16 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private CustomComponents.Button button1;
-    private CustomComponents.CheckBox checkA;
-    private CustomComponents.CheckBox checkB;
-    private CustomComponents.CheckBox checkC;
-    private CustomComponents.CheckBox checkD;
+    private CustomComponents.CheckBox checkCadA;
+    private CustomComponents.CheckBox checkCadB;
+    private CustomComponents.CheckBox checkCadC;
+    private CustomComponents.CheckBox checkCadD;
+    private CustomComponents.CheckBox checkConA;
+    private CustomComponents.CheckBox checkConB;
+    private CustomComponents.CheckBox checkConC;
+    private CustomComponents.CheckBox checkConD;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -556,7 +655,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -577,18 +675,35 @@ public class MainFrame extends javax.swing.JFrame {
     private CustomComponents.PanelRound pnlA;
     private CustomComponents.PanelRound pnlB;
     private CustomComponents.PanelRound pnlC;
+    private CustomComponents.PanelResult pnlCard1;
+    private CustomComponents.PanelResult pnlCard2;
+    private CustomComponents.PanelResult pnlCartesian;
+    private javax.swing.JPanel pnlCheckBox;
+    private javax.swing.JPanel pnlCheckBox1;
+    private javax.swing.JPanel pnlChecksCon;
+    private CustomComponents.PanelResult pnlComp1;
+    private CustomComponents.PanelResult pnlComp2;
     private CustomComponents.PanelRound pnlConjuntos;
     private CustomComponents.PanelRound pnlD;
+    private CustomComponents.PanelResult pnlDifference;
     private javax.swing.JPanel pnlGenConjuntos;
     private CustomComponents.PanelRound pnlInputs;
+    private CustomComponents.PanelResult pnlIntersect;
     private CustomComponents.PanelRound pnlOpCadenas;
     private CustomComponents.PanelRound pnlOpConjuntos;
     private javax.swing.JPanel pnlOperaciones;
+    private CustomComponents.PanelResult pnlPot1;
+    private CustomComponents.PanelResult pnlPot2;
     private javax.swing.JPanel pnlPrincipal;
+    private javax.swing.JPanel pnlResultCon;
+    private CustomComponents.PanelResult pnlSymetricDiff;
     private javax.swing.JPanel pnlTxts;
+    private CustomComponents.PanelResult pnlUnion;
+    private CustomComponents.PanelResult pnlUniverso;
     private javax.swing.JScrollPane scrollA;
     private javax.swing.JScrollPane scrollB;
     private javax.swing.JScrollPane scrollC;
+    private javax.swing.JScrollPane scrollConjuntos;
     private javax.swing.JScrollPane scrollD;
     private javax.swing.JTextField txtA;
     private javax.swing.JTextField txtB;
