@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Scrollbar;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class MainFrame extends javax.swing.JFrame {
@@ -164,6 +165,7 @@ public class MainFrame extends javax.swing.JFrame {
             pnlTranspuesta.setData("./src/main/java/Resources/transpuesta.png", Color.orange, "Transpuesta", obCad.getTranspuesta(txtCadena.getText()));
         } else {
             System.out.println("LA CADENA NO EXISTE EN EL ALFABETO");
+            JOptionPane.showMessageDialog(null, "La cadena no se encuentra dentro del alfabeto", "ERROR!", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -996,28 +998,32 @@ public class MainFrame extends javax.swing.JFrame {
             SwingUtilities.updateComponentTreeUI(pnlResultCon);
             System.out.println("GENERAR!");
         } else if (cont == 1) {
-            System.out.println("Solo has seleccionado un conjunto");
+            JOptionPane.showMessageDialog(null, "Solo has seleccionado un conjunto", "ADVERTENCIA!", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            System.out.println("No se han seleccionado 2 conjuntos");
+            JOptionPane.showMessageDialog(null, "No se han seleccionado 2 conjuntos", "ERROR!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnCalcConActionPerformed
 
     private void btnCalcCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcCadActionPerformed
         String alfabeto = "";
-        alfabeto = btnGroup.getSelection().getActionCommand();
-        switch (alfabeto) {
-            case "A":
-                genOpCadenas(data.getA());
-                break;
-            case "B":
-                genOpCadenas(data.getB());
-                break;
-            case "C":
-                genOpCadenas(data.getC());
-                break;
-            case "D":
-                genOpCadenas(data.getD());
-                break;
+        if (btnGroup.getSelection() == null) {
+            JOptionPane.showMessageDialog(null, "No se han seleccionado ningun alfabeto", "ERROR!", JOptionPane.ERROR_MESSAGE);
+        } else {
+            alfabeto = btnGroup.getSelection().getActionCommand();
+            switch (alfabeto) {
+                case "A":
+                    genOpCadenas(data.getA());
+                    break;
+                case "B":
+                    genOpCadenas(data.getB());
+                    break;
+                case "C":
+                    genOpCadenas(data.getC());
+                    break;
+                case "D":
+                    genOpCadenas(data.getD());
+                    break;
+            }
         }
     }//GEN-LAST:event_btnCalcCadActionPerformed
 

@@ -40,8 +40,7 @@ public class StringOperations {
         ArrayList<String> prefijo = new ArrayList<>();
         for (int i = 0; i <= cadena.length(); i++) {
             prefijo.add(cadena.substring(0, i));
-        }
-        
+        }       
         return prefijo;
     }
     
