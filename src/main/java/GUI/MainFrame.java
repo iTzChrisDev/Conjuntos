@@ -4,6 +4,7 @@ import CustomComponents.CheckBox;
 import CustomComponents.ScrollBarCustom;
 import Funciones.ConjuntosOperations;
 import Funciones.Data;
+import Funciones.GenerarOperaciones;
 import Funciones.ListManager;
 import Funciones.StringOperations;
 import java.awt.Color;
@@ -21,6 +22,7 @@ public class MainFrame extends javax.swing.JFrame {
     private StringOperations obCad;
     private int cont;
     private ArrayList<String> conjuntos, first, second;
+    private GenerarOperaciones obG;
 
     public MainFrame() {
         initComponents();
@@ -36,6 +38,7 @@ public class MainFrame extends javax.swing.JFrame {
         manager = new ListManager();
         obCad = new StringOperations();
         obCon = new ConjuntosOperations();
+        obG = new GenerarOperaciones();
     }
 
     public void initComponentsCustom() {
@@ -77,96 +80,6 @@ public class MainFrame extends javax.swing.JFrame {
         checkCadB.setActionCommand("B");
         checkCadC.setActionCommand("C");
         checkCadD.setActionCommand("D");
-    }
-
-    public void genOpConjuntos() {
-        first.clear();
-        second.clear();
-        String strFirst = "", strSec = "";
-        for (String s : conjuntos) {
-            switch (s) {
-                case "A":
-                    if (first.isEmpty()) {
-                        first.addAll(data.getA());
-                        strFirst = "A";
-                    } else {
-                        second.addAll(data.getA());
-                        strSec = "A";
-                    }
-                    break;
-                case "B":
-                    if (first.isEmpty()) {
-                        first.addAll(data.getB());
-                        strFirst = "B";
-                    } else {
-                        second.addAll(data.getB());
-                        strSec = "B";
-                    }
-                    break;
-                case "C":
-                    if (first.isEmpty()) {
-                        first.addAll(data.getC());
-                        strFirst = "C";
-                    } else {
-                        second.addAll(data.getC());
-                        strSec = "C";
-                    }
-                    break;
-                case "D":
-                    if (first.isEmpty()) {
-                        first.addAll(data.getD());
-                        strFirst = "D";
-                    } else {
-                        second.addAll(data.getD());
-                        strSec = "D";
-                    }
-                    break;
-            }
-        }
-        pnlUniverso.setData("./src/main/java/Resources/universe.png", Color.orange, "Universo", String.valueOf(obCon.getUniverse(first, second)));
-        pnlUnion.setData("./src/main/java/Resources/union.png", Color.orange, "Union", String.valueOf(obCon.getUnion(first, second)));
-        pnlIntersect.setData("./src/main/java/Resources/interseccion.png", Color.orange, "Intersección", String.valueOf(obCon.getIntersect(first, second)));
-        pnlDifference.setData("./src/main/java/Resources/diferencia.png", Color.orange, "Diferencia", String.valueOf(obCon.getDifference(first, second)));
-        pnlSymetricDiff.setData("./src/main/java/Resources/diferencia.png", Color.orange, "Diferencia Simetrica", String.valueOf(obCon.getSimetricDifference(first, second)));
-        pnlComp1.setData("./src/main/java/Resources/complemento.png", Color.orange, "Complemento " + strFirst, String.valueOf(obCon.getComplement(first, second, first)));
-        pnlComp2.setData("./src/main/java/Resources/complemento.png", Color.orange, "Complemento " + strSec, String.valueOf(obCon.getComplement(first, second, second)));
-        pnlCard1.setData("./src/main/java/Resources/cardinalidad.png", Color.orange, "Cardinalidad " + strFirst, String.valueOf(obCon.getCardinality(first)));
-        pnlCard2.setData("./src/main/java/Resources/cardinalidad.png", Color.orange, "Cardinalidad " + strSec, String.valueOf(obCon.getCardinality(second)));
-        pnlCartesian.setData("./src/main/java/Resources/producto.png", Color.orange, "Producto Cartesiano", String.valueOf(obCon.getCartesianProduct(first, second)));
-        pnlPot1.setData("./src/main/java/Resources/potencia.png", Color.orange, "Potencia " + strFirst, String.valueOf(obCon.getConjuntoPotencia(first)));
-        pnlPot2.setData("./src/main/java/Resources/potencia.png", Color.orange, "Potencia " + strSec, String.valueOf(obCon.getConjuntoPotencia(second)));
-    }
-
-    public void genOpCadenas(ArrayList<String> alfabeto) {
-        boolean val = false;
-        String aux[] = new String[txtCadena.getText().length()];
-        for (int i = 0; i < txtCadena.getText().length(); i++) {
-            aux[i] = String.valueOf(txtCadena.getText().charAt(i));
-        }
-        for (String s : aux) {
-            if (alfabeto.contains(s)) {
-                val = true;
-            } else {
-                val = false;
-                break;
-            }
-        }
-
-        if (val) {
-            System.out.println("CADENA CORRECTA!");
-            SwingUtilities.updateComponentTreeUI(pnlResultCad);
-            pnlConcatenacion.setData("./src/main/java/Resources/concatenacion.png", Color.orange, "Concatenación", obCad.getConcatStr(txtCadena.getText(), txtConcat.getText()));
-            pnlPotencia.setData("./src/main/java/Resources/potencia.png", Color.orange, "Potencia", obCad.getPotencia(Integer.parseInt(txtPotencia.getText()), txtCadena.getText()));
-            pnlLongitud.setData("./src/main/java/Resources/longitud.png", Color.orange, "Longitud", String.valueOf(obCad.getLongitud(txtCadena.getText())));
-            pnlPrefijo.setData("./src/main/java/Resources/prefijo.png", Color.orange, "Prefijo", String.valueOf(obCad.getPrefijo(txtCadena.getText())));
-            pnlSufijo.setData("./src/main/java/Resources/sufijo.png", Color.orange, "Sufijo", String.valueOf(obCad.getSufijo(txtCadena.getText())));
-            pnlSubCadenaIzq.setData("./src/main/java/Resources/subcadena.png", Color.orange, "Subcadena Izquierda", obCad.getSubstringLeft(Integer.parseInt(txtSubIzq.getText()), txtCadena.getText()));
-            pnlSubCadenaDer.setData("./src/main/java/Resources/subcadena.png", Color.orange, "Subcadena Derecha", obCad.getSubstringRight(Integer.parseInt(txtSubDer.getText()), txtCadena.getText()));
-            pnlTranspuesta.setData("./src/main/java/Resources/transpuesta.png", Color.orange, "Transpuesta", obCad.getTranspuesta(txtCadena.getText()));
-        } else {
-            System.out.println("LA CADENA NO EXISTE EN EL ALFABETO");
-            JOptionPane.showMessageDialog(null, "La cadena no se encuentra dentro del alfabeto", "ERROR!", JOptionPane.ERROR_MESSAGE);
-        }
     }
 
     @SuppressWarnings("unchecked")
@@ -283,7 +196,6 @@ public class MainFrame extends javax.swing.JFrame {
         pnlTranspuesta = new CustomComponents.PanelResult();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1080, 650));
 
         pnlPrincipal.setBackground(new java.awt.Color(30, 30, 30));
         pnlPrincipal.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -309,14 +221,14 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(102, 99, 254));
         jLabel1.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("A:");
         jPanel1.add(jLabel1, java.awt.BorderLayout.WEST);
 
         txtA.setBackground(new java.awt.Color(50, 50, 50));
         txtA.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtA.setForeground(new java.awt.Color(200, 200, 200));
-        txtA.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtA.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtA.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel1.add(txtA, java.awt.BorderLayout.CENTER);
 
@@ -326,14 +238,14 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.BorderLayout(5, 0));
 
         jLabel2.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("B:");
         jPanel2.add(jLabel2, java.awt.BorderLayout.WEST);
 
         txtB.setBackground(new java.awt.Color(50, 50, 50));
         txtB.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtB.setForeground(new java.awt.Color(200, 200, 200));
-        txtB.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtB.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtB.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel2.add(txtB, java.awt.BorderLayout.CENTER);
 
@@ -343,14 +255,14 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel3.setLayout(new java.awt.BorderLayout(5, 0));
 
         jLabel3.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("C:");
         jPanel3.add(jLabel3, java.awt.BorderLayout.WEST);
 
         txtC.setBackground(new java.awt.Color(50, 50, 50));
         txtC.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtC.setForeground(new java.awt.Color(200, 200, 200));
-        txtC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtC.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel3.add(txtC, java.awt.BorderLayout.CENTER);
 
@@ -360,14 +272,14 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel4.setLayout(new java.awt.BorderLayout(5, 0));
 
         jLabel4.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("D:");
         jPanel4.add(jLabel4, java.awt.BorderLayout.WEST);
 
         txtD.setBackground(new java.awt.Color(50, 50, 50));
         txtD.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtD.setForeground(new java.awt.Color(200, 200, 200));
-        txtD.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtD.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtD.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel4.add(txtD, java.awt.BorderLayout.CENTER);
 
@@ -822,14 +734,14 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel11.setBackground(new java.awt.Color(102, 99, 254));
         jLabel11.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Cadena:");
         jPanel16.add(jLabel11, java.awt.BorderLayout.WEST);
 
         txtCadena.setBackground(new java.awt.Color(50, 50, 50));
         txtCadena.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtCadena.setForeground(new java.awt.Color(200, 200, 200));
-        txtCadena.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtCadena.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtCadena.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel16.add(txtCadena, java.awt.BorderLayout.CENTER);
 
@@ -840,14 +752,14 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel12.setBackground(new java.awt.Color(102, 99, 254));
         jLabel12.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Cad. Concatenar:");
         jPanel17.add(jLabel12, java.awt.BorderLayout.WEST);
 
         txtConcat.setBackground(new java.awt.Color(50, 50, 50));
         txtConcat.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtConcat.setForeground(new java.awt.Color(200, 200, 200));
-        txtConcat.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtConcat.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtConcat.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel17.add(txtConcat, java.awt.BorderLayout.CENTER);
 
@@ -858,14 +770,14 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel13.setBackground(new java.awt.Color(102, 99, 254));
         jLabel13.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Potencia:");
         jPanel18.add(jLabel13, java.awt.BorderLayout.WEST);
 
         txtPotencia.setBackground(new java.awt.Color(50, 50, 50));
         txtPotencia.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtPotencia.setForeground(new java.awt.Color(200, 200, 200));
-        txtPotencia.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtPotencia.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtPotencia.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel18.add(txtPotencia, java.awt.BorderLayout.CENTER);
 
@@ -876,14 +788,14 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel14.setBackground(new java.awt.Color(102, 99, 254));
         jLabel14.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Subcadena Izq:");
         jPanel19.add(jLabel14, java.awt.BorderLayout.WEST);
 
         txtSubIzq.setBackground(new java.awt.Color(50, 50, 50));
         txtSubIzq.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtSubIzq.setForeground(new java.awt.Color(200, 200, 200));
-        txtSubIzq.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtSubIzq.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtSubIzq.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel19.add(txtSubIzq, java.awt.BorderLayout.CENTER);
 
@@ -894,14 +806,14 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel15.setBackground(new java.awt.Color(102, 99, 254));
         jLabel15.setFont(new java.awt.Font("Roboto Mono SemiBold", 0, 16)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 200, 0));
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Subcadena Der:");
         jPanel20.add(jLabel15, java.awt.BorderLayout.WEST);
 
         txtSubDer.setBackground(new java.awt.Color(50, 50, 50));
         txtSubDer.setFont(new java.awt.Font("Roboto Mono", 0, 14)); // NOI18N
         txtSubDer.setForeground(new java.awt.Color(200, 200, 200));
-        txtSubDer.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 200, 0)));
+        txtSubDer.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtSubDer.setCaretColor(new java.awt.Color(200, 200, 200));
         jPanel20.add(txtSubDer, java.awt.BorderLayout.CENTER);
 
@@ -994,7 +906,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnCalcConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcConActionPerformed
         if (cont == 2) {
-            genOpConjuntos();
+            obG.genOpConjuntos(conjuntos, first, second, data, pnlUniverso, pnlUnion, pnlIntersect, pnlDifference, pnlSymetricDiff, pnlComp1, pnlComp2, pnlCard1, pnlCard2, pnlCartesian, pnlPot1, pnlPot2);
             SwingUtilities.updateComponentTreeUI(pnlResultCon);
             System.out.println("GENERAR!");
         } else if (cont == 1) {
@@ -1012,16 +924,16 @@ public class MainFrame extends javax.swing.JFrame {
             alfabeto = btnGroup.getSelection().getActionCommand();
             switch (alfabeto) {
                 case "A":
-                    genOpCadenas(data.getA());
+                    obG.genOpCadenas(data.getA(), txtCadena, txtConcat, txtPotencia, txtSubIzq, txtSubDer, pnlResultCad, pnlConcatenacion, pnlPotencia, pnlLongitud, pnlPrefijo, pnlSufijo, pnlSubCadenaIzq, pnlSubCadenaDer, pnlTranspuesta);
                     break;
                 case "B":
-                    genOpCadenas(data.getB());
+                    obG.genOpCadenas(data.getB(), txtCadena, txtConcat, txtPotencia, txtSubIzq, txtSubDer, pnlResultCad, pnlConcatenacion, pnlPotencia, pnlLongitud, pnlPrefijo, pnlSufijo, pnlSubCadenaIzq, pnlSubCadenaDer, pnlTranspuesta);
                     break;
                 case "C":
-                    genOpCadenas(data.getC());
+                    obG.genOpCadenas(data.getC(), txtCadena, txtConcat, txtPotencia, txtSubIzq, txtSubDer, pnlResultCad, pnlConcatenacion, pnlPotencia, pnlLongitud, pnlPrefijo, pnlSufijo, pnlSubCadenaIzq, pnlSubCadenaDer, pnlTranspuesta);
                     break;
                 case "D":
-                    genOpCadenas(data.getD());
+                    obG.genOpCadenas(data.getD(), txtCadena, txtConcat, txtPotencia, txtSubIzq, txtSubDer, pnlResultCad, pnlConcatenacion, pnlPotencia, pnlLongitud, pnlPrefijo, pnlSufijo, pnlSubCadenaIzq, pnlSubCadenaDer, pnlTranspuesta);
                     break;
             }
         }

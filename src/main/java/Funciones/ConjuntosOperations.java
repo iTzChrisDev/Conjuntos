@@ -33,10 +33,12 @@ public class ConjuntosOperations {
     }
 
     // Operaciones con conjuntos
-    public ArrayList<String> getUniverse(ArrayList<String> a, ArrayList<String> b) {
+    public ArrayList<String> getUniverse(ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d) {
         Set<String> set = new HashSet<>();
         set.addAll(a);
         set.addAll(b);
+        set.addAll(c);
+        set.addAll(d);
         return new ArrayList<String>(set);
     }
 
@@ -90,9 +92,9 @@ public class ConjuntosOperations {
         return simetricDifference;
     }
 
-    public ArrayList<String> getComplement(ArrayList<String> firstSet, ArrayList<String> secondSet, ArrayList<String> complementarySet) {
+    public ArrayList<String> getComplement(ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d, ArrayList<String> complementarySet) {
         ArrayList<String> complement = new ArrayList<>();
-        for (String u : getUniverse(firstSet, secondSet)) {
+        for (String u : getUniverse(a, b, c, d)) {
             if (!complementarySet.contains(u)) {
                 complement.add(u);
             }
