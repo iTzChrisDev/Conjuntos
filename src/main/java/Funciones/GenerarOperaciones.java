@@ -57,8 +57,6 @@ public class GenerarOperaciones {
 
     public void genOpCadenas(ArrayList<String> alfabeto, JTextField txtCadena, JTextField txtConcat, JTextField txtPotencia, JTextField txtSubIzq, JTextField txtSubDer, JPanel pnlResultCad, PanelResult pnlConcatenacion, PanelResult pnlPotencia, PanelResult pnlLongitud, PanelResult pnlPrefijo, PanelResult pnlSufijo, PanelResult pnlSubCadenaIzq, PanelResult pnlSubCadenaDer, PanelResult pnlTranspuesta) {
         clearData();
-        System.out.println(elementosEncontrados);
-        System.out.println(noEncontrados);
         String cadena = txtCadena.getText();
         verificarCadena(cadena, alfabeto);
 
