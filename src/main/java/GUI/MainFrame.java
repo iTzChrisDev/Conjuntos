@@ -2,11 +2,9 @@ package GUI;
 
 import CustomComponents.CheckBox;
 import CustomComponents.ScrollBarCustom;
-import Funciones.ConjuntosOperations;
 import Funciones.Data;
 import Funciones.GenerarOperaciones;
 import Funciones.ListManager;
-import Funciones.StringOperations;
 import java.awt.Color;
 import java.awt.Scrollbar;
 import java.util.ArrayList;
@@ -18,8 +16,6 @@ public class MainFrame extends javax.swing.JFrame {
 
     private Data data;
     private ListManager manager;
-    private ConjuntosOperations obCon;
-    private StringOperations obCad;
     private int cont;
     private ArrayList<String> conjuntos, first, second;
     private GenerarOperaciones obG;
@@ -36,8 +32,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         data = new Data();
         manager = new ListManager();
-        obCad = new StringOperations();
-        obCon = new ConjuntosOperations();
         obG = new GenerarOperaciones();
     }
 

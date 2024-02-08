@@ -120,33 +120,25 @@ public class ConjuntosOperations {
     }
 
     public ArrayList<ArrayList<String>> getConjuntoPotencia(ArrayList<String> conjunto) {
-        // Se crea una lista para almacenar el conjunto potencia
         ArrayList<ArrayList<String>> conjuntoPotencia = new ArrayList<>();
-
         // Se agrega el conjunto vacío al conjunto potencia
         conjuntoPotencia.add(new ArrayList<>());
 
-        // Se recorre cada elemento del conjunto original
+        // Se recorren los elementos del conjunto principal
         for (String elemento : conjunto) {
-
             // Se crea una lista temporal para almacenar los subconjuntos que se van a generar
             ArrayList<ArrayList<String>> subconjuntosTemporales = new ArrayList<>();
-
             // Se recorre cada subconjunto del conjunto potencia actual
             for (ArrayList<String> subconjunto : conjuntoPotencia) {
-
                 // Se crea un nuevo subconjunto a partir del subconjunto actual y se agrega el elemento
                 ArrayList<String> nuevoSubconjunto = new ArrayList<>(subconjunto);
                 nuevoSubconjunto.add(elemento);
-
                 // Se agrega el nuevo subconjunto a la lista temporal
                 subconjuntosTemporales.add(nuevoSubconjunto);
             }
-
             // Se agregan los subconjuntos temporales al conjunto potencia
             conjuntoPotencia.addAll(subconjuntosTemporales);
         }
-
         // Se retorna el conjunto potencia
         return conjuntoPotencia;
     }

@@ -12,39 +12,62 @@ public class GenerarOperaciones {
 
     private StringOperations obCad = new StringOperations();
     private ConjuntosOperations obCon = new ConjuntosOperations();
+    private ArrayList<String> elementosEncontrados;
+    private ArrayList<Character> noEncontrados;
 
-    public void genOpCadenas(ArrayList<String> alfabeto, JTextField txtCadena, JTextField txtConcat, JTextField txtPotencia, JTextField txtSubIzq, JTextField txtSubDer, JPanel pnlResultCad, PanelResult pnlConcatenacion, PanelResult pnlPotencia, PanelResult pnlLongitud, PanelResult pnlPrefijo, PanelResult pnlSufijo, PanelResult pnlSubCadenaIzq, PanelResult pnlSubCadenaDer, PanelResult pnlTranspuesta) {
-        boolean val = false;
-//        String aux[] = new String[txtCadena.getText().length()];
-//        for (int i = 0; i < txtCadena.getText().length(); i++) {
-//            aux[i] = String.valueOf(txtCadena.getText().charAt(i));
-//        }
-//        for (String s : aux) {
-//            if (alfabeto.contains(s)) {
-//                val = true;
-//            } else {
-//                val = false;
-//                break;
-//            }
-//        }
+    public GenerarOperaciones() {
+        elementosEncontrados = new ArrayList<>();
+        noEncontrados = new ArrayList<>();
+    }
 
-        String cadena = txtCadena.getText();
-        
-        for (String s : alfabeto) {
-            System.out.println(s);
-            if (cadena.contains(s)) {
-                val = true;
-            } else {
-                val = false;
+    public void clearData() {
+        elementosEncontrados.clear();
+        noEncontrados.clear();
+    }
+
+    public void verificarCadena(String cadena, ArrayList<String> alfabeto) {
+        int indice = 0;
+
+        // El ciclo se mantiene mientras el indice de iteracion no agote la cantidad de caracteres encontrados o no encontrados
+        while (indice < cadena.length()) {
+            boolean val = false;
+
+            // Recorremos la cadena del final al principio 
+            for (int i = cadena.length(); i > indice; i--) {
+                String subcadena = cadena.substring(indice, i);
+
+                // Verificamos si la subcadena está en el alfabeto
+                if (alfabeto.contains(subcadena)) {
+                    // Añadimos a la lista la subcadena que se encuentren en el alfabeto
+                    elementosEncontrados.add(subcadena);
+                    // Restablecemos el indice en el final de la subcadena / principio de la cadena princiapl
+                    indice = i;
+                    val = true;
+                    break;
+                }
+            }
+
+            // Si no se encontró ninguna subcadena valida, agregamos el caracter no encontrado dentro del alfabeto
+            if (!val) {
+                noEncontrados.add(cadena.charAt(indice));
+                indice++;
             }
         }
+    }
 
-        if (val) {
+    public void genOpCadenas(ArrayList<String> alfabeto, JTextField txtCadena, JTextField txtConcat, JTextField txtPotencia, JTextField txtSubIzq, JTextField txtSubDer, JPanel pnlResultCad, PanelResult pnlConcatenacion, PanelResult pnlPotencia, PanelResult pnlLongitud, PanelResult pnlPrefijo, PanelResult pnlSufijo, PanelResult pnlSubCadenaIzq, PanelResult pnlSubCadenaDer, PanelResult pnlTranspuesta) {
+        clearData();
+        System.out.println(elementosEncontrados);
+        System.out.println(noEncontrados);
+        String cadena = txtCadena.getText();
+        verificarCadena(cadena, alfabeto);
+
+        if (noEncontrados.isEmpty()) {
             System.out.println("CADENA CORRECTA!");
             SwingUtilities.updateComponentTreeUI(pnlResultCad);
             pnlConcatenacion.setData("./src/main/java/Resources/concatenacion.png", Color.orange, "Concatenación", obCad.getConcatStr(txtCadena.getText(), txtConcat.getText()));
             pnlPotencia.setData("./src/main/java/Resources/potencia.png", Color.orange, "Potencia", obCad.getPotencia(Integer.parseInt(txtPotencia.getText()), txtCadena.getText()));
-            pnlLongitud.setData("./src/main/java/Resources/longitud.png", Color.orange, "Longitud", String.valueOf(obCad.getLongitud(txtCadena.getText())));
+            pnlLongitud.setData("./src/main/java/Resources/longitud.png", Color.orange, "Longitud", String.valueOf(obCad.getLongitud(elementosEncontrados)));
             pnlPrefijo.setData("./src/main/java/Resources/prefijo.png", Color.orange, "Prefijo", String.valueOf(obCad.getPrefijo(txtCadena.getText())));
             pnlSufijo.setData("./src/main/java/Resources/sufijo.png", Color.orange, "Sufijo", String.valueOf(obCad.getSufijo(txtCadena.getText())));
             pnlSubCadenaIzq.setData("./src/main/java/Resources/subcadena.png", Color.orange, "Subcadena Izquierda", obCad.getSubstringLeft(Integer.parseInt(txtSubIzq.getText()), txtCadena.getText()));
@@ -56,10 +79,7 @@ public class GenerarOperaciones {
         }
     }
 
-    public void genOpConjuntos(ArrayList<String> conjuntos, ArrayList<String> first, ArrayList<String> second,
-            Data data, PanelResult pnlUniverso, PanelResult pnlUnion, PanelResult pnlIntersect,
-            PanelResult pnlDifference, PanelResult pnlSymetricDiff, PanelResult pnlComp1, PanelResult pnlComp2,
-            PanelResult pnlCard1, PanelResult pnlCard2, PanelResult pnlCartesian, PanelResult pnlPot1, PanelResult pnlPot2) {
+    public void genOpConjuntos(ArrayList<String> conjuntos, ArrayList<String> first, ArrayList<String> second, Data data, PanelResult pnlUniverso, PanelResult pnlUnion, PanelResult pnlIntersect, PanelResult pnlDifference, PanelResult pnlSymetricDiff, PanelResult pnlComp1, PanelResult pnlComp2, PanelResult pnlCard1, PanelResult pnlCard2, PanelResult pnlCartesian, PanelResult pnlPot1, PanelResult pnlPot2) {
         first.clear();
         second.clear();
         String strFirst = "", strSec = "";

@@ -13,14 +13,13 @@ public class Data {
         d = new ArrayList<>();
     }
 
-    public void clearData()
-    {
+    public void clearData() {
         a.clear();
         b.clear();
         c.clear();
         d.clear();
     }
-    
+
     public ArrayList<String> getA() {
         return a;
     }

@@ -24,8 +24,8 @@ public class StringOperations {
         return str.substring(str.length() - index, str.length());
     }
     
-    public int getLongitud(String cadena) {
-        return cadena.length();
+    public int getLongitud(ArrayList lista) {
+        return lista.size();
     }
     
     public String getTranspuesta(String cadena) {
