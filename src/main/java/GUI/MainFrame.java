@@ -7,6 +7,8 @@ import Funciones.GenerarOperaciones;
 import Funciones.ListManager;
 import java.awt.Color;
 import java.awt.Scrollbar;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -23,6 +25,8 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
         initComponentsCustom();
+        setTitle("Conjuntos");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("./src/main/java/Resources/interseccion.png"));
         setLocationRelativeTo(this);
 
         cont = 0;
@@ -773,6 +777,11 @@ public class MainFrame extends javax.swing.JFrame {
         txtPotencia.setForeground(new java.awt.Color(200, 200, 200));
         txtPotencia.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtPotencia.setCaretColor(new java.awt.Color(200, 200, 200));
+        txtPotencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPotenciaKeyTyped(evt);
+            }
+        });
         jPanel18.add(txtPotencia, java.awt.BorderLayout.CENTER);
 
         jPanel14.add(jPanel18);
@@ -791,6 +800,11 @@ public class MainFrame extends javax.swing.JFrame {
         txtSubIzq.setForeground(new java.awt.Color(200, 200, 200));
         txtSubIzq.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtSubIzq.setCaretColor(new java.awt.Color(200, 200, 200));
+        txtSubIzq.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSubIzqKeyTyped(evt);
+            }
+        });
         jPanel19.add(txtSubIzq, java.awt.BorderLayout.CENTER);
 
         jPanel14.add(jPanel19);
@@ -809,6 +823,11 @@ public class MainFrame extends javax.swing.JFrame {
         txtSubDer.setForeground(new java.awt.Color(200, 200, 200));
         txtSubDer.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         txtSubDer.setCaretColor(new java.awt.Color(200, 200, 200));
+        txtSubDer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSubDerKeyTyped(evt);
+            }
+        });
         jPanel20.add(txtSubDer, java.awt.BorderLayout.CENTER);
 
         jPanel14.add(jPanel20);
@@ -948,6 +967,27 @@ public class MainFrame extends javax.swing.JFrame {
     private void checkConDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkConDActionPerformed
         getConjuntos(checkConD, conjuntos, "D");
     }//GEN-LAST:event_checkConDActionPerformed
+
+    private void txtPotenciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPotenciaKeyTyped
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c)) || (c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtPotenciaKeyTyped
+
+    private void txtSubIzqKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSubIzqKeyTyped
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c)) || (c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSubIzqKeyTyped
+
+    private void txtSubDerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSubDerKeyTyped
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c)) || (c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSubDerKeyTyped
 
     public void getConjuntos(CheckBox checkBox, ArrayList<String> conjuntos, String conjunto) {
         if (!checkBox.isSelected()) {

@@ -56,25 +56,30 @@ public class GenerarOperaciones {
     }
 
     public void genOpCadenas(ArrayList<String> alfabeto, JTextField txtCadena, JTextField txtConcat, JTextField txtPotencia, JTextField txtSubIzq, JTextField txtSubDer, JPanel pnlResultCad, PanelResult pnlConcatenacion, PanelResult pnlPotencia, PanelResult pnlLongitud, PanelResult pnlPrefijo, PanelResult pnlSufijo, PanelResult pnlSubCadenaIzq, PanelResult pnlSubCadenaDer, PanelResult pnlTranspuesta) {
-        clearData();
-        String cadena = txtCadena.getText();
-        verificarCadena(cadena, alfabeto);
+        // try {
+            clearData();
+            String cadena = txtCadena.getText();
+            verificarCadena(cadena, alfabeto);
 
-        if (noEncontrados.isEmpty()) {
-            System.out.println("CADENA CORRECTA!");
-            SwingUtilities.updateComponentTreeUI(pnlResultCad);
-            pnlConcatenacion.setData("./src/main/java/Resources/concatenacion.png", Color.orange, "Concatenación", obCad.getConcatStr(txtCadena.getText(), txtConcat.getText()));
-            pnlPotencia.setData("./src/main/java/Resources/potencia.png", Color.orange, "Potencia", obCad.getPotencia(Integer.parseInt(txtPotencia.getText()), txtCadena.getText()));
-            pnlLongitud.setData("./src/main/java/Resources/longitud.png", Color.orange, "Longitud", String.valueOf(obCad.getLongitud(elementosEncontrados)));
-            pnlPrefijo.setData("./src/main/java/Resources/prefijo.png", Color.orange, "Prefijo", String.valueOf(obCad.getPrefijo(txtCadena.getText())));
-            pnlSufijo.setData("./src/main/java/Resources/sufijo.png", Color.orange, "Sufijo", String.valueOf(obCad.getSufijo(txtCadena.getText())));
-            pnlSubCadenaIzq.setData("./src/main/java/Resources/subcadena.png", Color.orange, "Subcadena Izquierda", obCad.getSubstringLeft(Integer.parseInt(txtSubIzq.getText()), txtCadena.getText()));
-            pnlSubCadenaDer.setData("./src/main/java/Resources/subcadena.png", Color.orange, "Subcadena Derecha", obCad.getSubstringRight(Integer.parseInt(txtSubDer.getText()), txtCadena.getText()));
-            pnlTranspuesta.setData("./src/main/java/Resources/transpuesta.png", Color.orange, "Transpuesta", obCad.getTranspuesta(txtCadena.getText()));
-        } else {
-            System.out.println("LA CADENA NO EXISTE EN EL ALFABETO");
-            JOptionPane.showMessageDialog(null, "La cadena no se encuentra dentro del alfabeto", "ERROR!", JOptionPane.ERROR_MESSAGE);
-        }
+            if (noEncontrados.isEmpty() && !alfabeto.isEmpty()) {
+                System.out.println("CADENA CORRECTA!");
+                SwingUtilities.updateComponentTreeUI(pnlResultCad);
+                pnlConcatenacion.setData("./src/main/java/Resources/concatenacion.png", Color.orange, "Concatenación", obCad.getConcatStr(txtCadena.getText(), txtConcat.getText()));
+                pnlPotencia.setData("./src/main/java/Resources/potencia.png", Color.orange, "Potencia", obCad.getPotencia(Integer.parseInt(txtPotencia.getText()), txtCadena.getText()));
+                pnlLongitud.setData("./src/main/java/Resources/longitud.png", Color.orange, "Longitud", String.valueOf(obCad.getLongitud(elementosEncontrados)));
+                pnlPrefijo.setData("./src/main/java/Resources/prefijo.png", Color.orange, "Prefijo", String.valueOf(obCad.getPrefijo(txtCadena.getText())));
+                pnlSufijo.setData("./src/main/java/Resources/sufijo.png", Color.orange, "Sufijo", String.valueOf(obCad.getSufijo(txtCadena.getText())));
+                pnlSubCadenaIzq.setData("./src/main/java/Resources/subcadena.png", Color.orange, "Subcadena Izquierda", obCad.getSubstringLeft(Integer.parseInt(txtSubIzq.getText()), txtCadena.getText()));
+                pnlSubCadenaDer.setData("./src/main/java/Resources/subcadena.png", Color.orange, "Subcadena Derecha", obCad.getSubstringRight(Integer.parseInt(txtSubDer.getText()), txtCadena.getText()));
+                pnlTranspuesta.setData("./src/main/java/Resources/transpuesta.png", Color.orange, "Transpuesta", obCad.getTranspuesta(txtCadena.getText()));
+            } else {
+                System.out.println("LA CADENA NO EXISTE EN EL ALFABETO");
+                JOptionPane.showMessageDialog(null, "La cadena no se encuentra dentro del alfabeto", "ERROR!", JOptionPane.ERROR_MESSAGE);
+            }
+        // } catch (Exception e) {
+        //     JOptionPane.showMessageDialog(null, "Alfabetos no validos", "ERROR!", JOptionPane.ERROR_MESSAGE);
+        // }
+
     }
 
     public void genOpConjuntos(ArrayList<String> conjuntos, ArrayList<String> first, ArrayList<String> second, Data data, PanelResult pnlUniverso, PanelResult pnlUnion, PanelResult pnlIntersect, PanelResult pnlDifference, PanelResult pnlSymetricDiff, PanelResult pnlComp1, PanelResult pnlComp2, PanelResult pnlCard1, PanelResult pnlCard2, PanelResult pnlCartesian, PanelResult pnlPot1, PanelResult pnlPot2) {

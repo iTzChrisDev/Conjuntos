@@ -6,10 +6,10 @@ GUI\MainFrame$5.class
 Funciones\ConjuntosOperations.class
 com\mycompany\conjuntos\Conjuntos.class
 CustomComponents\ScrollBarCustom.class
+GUI\MainFrame$10.class
 CustomComponents\PanelResult.class
 Funciones\Data.class
 CustomComponents\Button.class
-CustomComponents\TextPrompt$Show.class
 GUI\MainFrame$2.class
 CustomComponents\PanelRound.class
 CustomComponents\Button$1.class
@@ -17,9 +17,10 @@ Funciones\GenerarOperaciones.class
 GUI\MainFrame$6.class
 GUI\MainFrame$1.class
 CustomComponents\ModernScrollBarUI$ScrollBarButton.class
+GUI\MainFrame$11.class
 GUI\MainFrame$8.class
 Funciones\ListManager.class
 GUI\MainFrame$4.class
 GUI\MainFrame$3.class
 GUI\MainFrame.class
-CustomComponents\TextPrompt.class
+GUI\MainFrame$9.class

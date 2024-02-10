@@ -9,6 +9,7 @@ public class ConjuntosOperations {
     public ArrayList<String> getConjunto(String cadena) {
         ArrayList<String> lista = new ArrayList<>();
         ArrayList<String> listaAux = new ArrayList<>();
+        Set<String> set = new HashSet<>();
 
         //Dividimos la cadena de entrada
         String[] aux = cadena.split(",");
@@ -28,7 +29,8 @@ public class ConjuntosOperations {
             }
         }
         lista.clear();
-        lista.addAll(listaAux);
+        set.addAll(listaAux);
+        lista.addAll(set);
         return lista;
     }
 
